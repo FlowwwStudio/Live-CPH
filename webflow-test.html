@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LiveCPH Webflow Integration Test</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .header {
+            background: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .floor-selector {
+            padding: 20px;
+            background: #f8f9fa;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+        
+        .floor-button {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #e9ecef;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: background-color 0.2s;
+        }
+        
+        .floor-button:hover {
+            background-color: #dee2e6;
+        }
+        
+        .floor-button.active {
+            background-color: #007bff;
+            color: white;
+        }
+        
+        .etageplan-viewer {
+            width: 100%;
+            height: 600px;
+            border: none;
+            display: block;
+        }
+        
+        .status {
+            padding: 20px;
+            background: #d4edda;
+            border-left: 4px solid #28a745;
+            margin: 20px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>LiveCPH Etageplan Integration Test</h1>
+            <p>Test af ny URL-struktur: /ejendom/etage-x</p>
+        </div>
+        
+        <div class="floor-selector">
+            <div class="floor-button active" data-floor="0">0</div>
+            <div class="floor-button" data-floor="1">1</div>
+            <div class="floor-button" data-floor="2">2</div>
+            <div class="floor-button" data-floor="3">3</div>
+            <div class="floor-button" data-floor="4">4</div>
+            <div class="floor-button" data-floor="5">5</div>
+            <div class="floor-button" data-floor="6">6</div>
+            <div class="floor-button" data-floor="7">7</div>
+        </div>
+        
+        <iframe 
+            id="etageplan-iframe"
+            src="http://localhost:3000/strandlodsvej/etage-0" 
+            class="etageplan-viewer">
+        </iframe>
+        
+        <div class="status">
+            <strong>✅ Ny URL-struktur implementeret!</strong><br>
+            URLs er nu: <code>/strandlodsvej/etage-1</code>, <code>/vesterbrogade/etage-2</code>, osv.<br>
+            Perfekt til Webflow dynamic links med CMS data.
+        </div>
+    </div>
+
+    <!-- Hidden apartment collection (simulation) -->
+    <div class="apartments-collection" style="display: none;">
+        <div class="apartment-item" data-apartment-id="STR-0-01">Lejlighed 1</div>
+        <div class="apartment-item" data-apartment-id="STR-0-02">Lejlighed 2</div>
+        <div class="apartment-item" data-apartment-id="STR-0-03">Lejlighed 3</div>
+    </div>
+
+    <script>
+        // Floor selector functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const floorButtons = document.querySelectorAll('.floor-button');
+            const iframe = document.getElementById('etageplan-iframe');
+            
+            floorButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const floor = this.getAttribute('data-floor');
+                    iframe.src = `http://localhost:3000/strandlodsvej/etage-${floor}`;
+                    
+                    // Update active state
+                    floorButtons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+                });
+            });
+        });
+
+        // PostMessage listener for apartment selection
+        window.addEventListener('message', function(event) {
+            console.log('📨 Received message:', event.data);
+            
+            if (event.data && event.data.type === 'openApartment') {
+                const apartmentId = event.data.apartmentId;
+                console.log('🏠 Modtaget apartment ID:', apartmentId);
+                
+                // Find matching apartment
+                const apartmentElement = document.querySelector(`[data-apartment-id="${apartmentId}"]`);
+                
+                if (apartmentElement) {
+                    console.log('✅ Lejlighed fundet!');
+                    alert(`✅ Lejlighed fundet og modal ville åbne for: ${apartmentId}`);
+                } else {
+                    console.log('❌ Lejlighed ikke fundet i DOM');
+                    alert(`❌ Lejlighed ikke fundet: ${apartmentId}`);
+                }
+            }
+        });
+
+        console.log('🎯 LiveCPH Integration Test klar!');
+        console.log('📋 Test ved at klikke på lejligheder i etageplan');
+    </script>
+</body>
+</html>
