@@ -165,6 +165,56 @@ class SimpleWebflowManager {
         return folders.find(folder => folder.displayName === name);
     }
 
+    // List assets in a specific folder
+    async listAssetsInFolder(folderId) {
+        try {
+            console.log(`📁 Henter assets fra folder ID: ${folderId}`);
+            const data = await this.makeRequest(`/sites/${this.siteId}/assets?folderId=${folderId}`);
+            
+            console.log(`✅ Fundet ${data.assets?.length || 0} assets i folder`);
+            return data.assets || [];
+        } catch (error) {
+            console.error(`❌ Kunne ikke hente assets fra folder ${folderId}:`, error.message);
+            throw error;
+        }
+    }
+
+    // Get all assets with folder information
+    async getAllAssets() {
+        try {
+            console.log("📁 Henter alle assets...");
+            const data = await this.makeRequest(`/sites/${this.siteId}/assets`);
+            
+            console.log(`✅ Fundet ${data.assets?.length || 0} assets i alt`);
+            return data.assets || [];
+        } catch (error) {
+            console.error("❌ Kunne ikke hente assets:", error.message);
+            throw error;
+        }
+    }
+
+    // Find assets by name pattern in specific folder
+    async findAssetsByPattern(folderName, namePattern) {
+        try {
+            const folder = await this.findFolderByName(folderName);
+            if (!folder) {
+                console.error(`❌ Folder '${folderName}' ikke fundet`);
+                return [];
+            }
+
+            const assets = await this.listAssetsInFolder(folder.id);
+            const matchingAssets = assets.filter(asset => 
+                asset.displayName && asset.displayName.match(namePattern)
+            );
+
+            console.log(`🔍 Fundet ${matchingAssets.length} assets der matcher pattern i '${folderName}'`);
+            return matchingAssets;
+        } catch (error) {
+            console.error(`❌ Fejl ved søgning efter assets:`, error.message);
+            return [];
+        }
+    }
+
     // Delete asset folder
     async deleteAssetFolder(folderId) {
         try {
@@ -235,6 +285,213 @@ class SimpleWebflowManager {
         console.log(`\n🎉 Mapper erstattet! ${results.length} nye mapper oprettet succesfuldt.`);
         return results;
     }
+
+    // CMS Methods
+    // List all collections
+    async listCollections() {
+        try {
+            console.log("📊 Henter CMS collections...");
+            const data = await this.makeRequest(`/sites/${this.siteId}/collections`);
+            
+            console.log(`✅ Fundet ${data.collections?.length || 0} collections`);
+            if (data.collections) {
+                data.collections.forEach(collection => {
+                    console.log(`  - ${collection.displayName} (ID: ${collection.id})`);
+                });
+            }
+            return data.collections || [];
+        } catch (error) {
+            console.error("❌ Kunne ikke hente collections:", error.message);
+            throw error;
+        }
+    }
+
+    // Get items from a specific collection
+    async getCollectionItems(collectionId, limit = 100) {
+        try {
+            console.log(`📊 Henter items fra collection: ${collectionId}`);
+            let allItems = [];
+            let offset = 0;
+            let hasMore = true;
+            
+            // Get all items by paginating
+            while (hasMore) {
+                const data = await this.makeRequest(`/collections/${collectionId}/items?limit=${limit}&offset=${offset}`);
+                const items = data.items || [];
+                allItems = allItems.concat(items);
+                
+                console.log(`📥 Hentet ${items.length} items (total: ${allItems.length})`);
+                
+                if (items.length < limit) {
+                    hasMore = false;
+                } else {
+                    offset += limit;
+                }
+                
+                // Wait a bit between requests
+                if (hasMore) {
+                    await new Promise(resolve => setTimeout(resolve, 200));
+                }
+            }
+            
+            console.log(`✅ Fundet ${allItems.length} items i alt i collection`);
+            return allItems;
+        } catch (error) {
+            console.error(`❌ Kunne ikke hente collection items:`, error.message);
+            throw error;
+        }
+    }
+
+    // Update collection item
+    async updateCollectionItem(collectionId, itemId, fieldData) {
+        try {
+            console.log(`🔄 Opdaterer item ${itemId} i collection ${collectionId}`);
+            
+            const updateData = {
+                fieldData: fieldData
+            };
+
+            const data = await this.makeRequest(
+                `/collections/${collectionId}/items/${itemId}`, 
+                'PATCH', 
+                updateData
+            );
+            
+            console.log(`✅ Item opdateret succesfuldt`);
+            return data;
+            
+        } catch (error) {
+            console.error(`❌ Kunne ikke opdatere collection item:`, error.message);
+            throw error;
+        }
+    }
+
+    // Find and update plantegning billede for lejligheder
+    async updatePlantegningBilleder(ejendom, etage, assetMappings) {
+        try {
+            console.log(`🏠 Opdaterer plantegning billeder for ${ejendom} ${etage}...`);
+            
+            // Get collections to find the right one for lejligheder
+            const collections = await this.listCollections();
+            const lejlighedCollection = collections.find(c => 
+                c.displayName.toLowerCase().includes('lejlighed') || 
+                c.displayName.toLowerCase().includes('apartment')
+            );
+            
+            if (!lejlighedCollection) {
+                console.error("❌ Kunne ikke finde lejlighed collection");
+                return [];
+            }
+            
+            console.log(`📊 Bruger collection: ${lejlighedCollection.displayName}`);
+            
+            // Get all items from the collection
+            const items = await this.getCollectionItems(lejlighedCollection.id);
+            
+            // Count items for info
+            const strandlodsItems = items.filter(item => 
+                item.fieldData.name && 
+                item.fieldData.name.toLowerCase().includes('strandlodsvej')
+            );
+            console.log(`🔍 Fundet ${strandlodsItems.length} Strandlodsvej lejligheder i CMS`);
+            
+            const updatedItems = [];
+            
+            // Update each matching item
+            for (const [lejlighedNummer, assetUrl] of Object.entries(assetMappings)) {
+                console.log(`\n🔍 Søger efter item for: ${lejlighedNummer}`);
+                
+                // Debug: Show what we're looking for
+                const numberMatch = lejlighedNummer.match(/\d+$/);
+                if (numberMatch) {
+                    if (ejendom.includes('Strandlodsvej')) {
+                        const expectedPattern = `strandlodsvej, ${etage}, lejlighed ${numberMatch[0]}`;
+                        console.log(`  🎯 Forventet pattern: "${expectedPattern}"`);
+                    } else if (ejendom.includes('Vesterbrogade')) {
+                        const expectedPattern = `vesterbrogade, ${etage}, lejlighed ${numberMatch[0]}`;
+                        console.log(`  🎯 Forventet pattern: "${expectedPattern}"`);
+                    }
+                }
+                
+                // Try different matching strategies
+                const item = items.find(item => {
+                    if (!item.fieldData.name) return false;
+                    
+                    const itemName = item.fieldData.name.toLowerCase();
+                    
+                    // Strategy 1: Strandlodsvej format - "Strandlodsvej, [etage], lejlighed [nummer]"
+                    if (ejendom.includes('Strandlodsvej')) {
+                        const numberMatch = lejlighedNummer.match(/\d+$/);
+                        if (numberMatch) {
+                            const number = numberMatch[0];
+                            const expectedPattern = `strandlodsvej, ${etage}, lejlighed ${number}`;
+                            
+                            if (itemName.includes(expectedPattern)) {
+                                console.log(`  ✅ Strandlodsvej match found: ${item.fieldData.name}`);
+                                return true;
+                            }
+                        }
+                    }
+                    
+                    // Strategy 2: Vesterbrogade format - "Vesterbrogade, [etage], lejlighed [nummer]"
+                    if (ejendom.includes('Vesterbrogade')) {
+                        const numberMatch = lejlighedNummer.match(/\d+$/);
+                        if (numberMatch) {
+                            const number = numberMatch[0];
+                            const expectedPattern = `vesterbrogade, ${etage}, lejlighed ${number}`;
+                            
+                            if (itemName.includes(expectedPattern)) {
+                                console.log(`  ✅ Vesterbrogade match found: ${item.fieldData.name}`);
+                                return true;
+                            }
+                        }
+                    }
+                    
+                    // Strategy 3: Direct match (fallback)
+                    if (itemName.includes(lejlighedNummer.toLowerCase())) {
+                        console.log(`  ✅ Direct match found: ${item.fieldData.name}`);
+                        return true;
+                    }
+                    
+                    return false;
+                });
+                
+                if (item) {
+                    try {
+                        // Update the plantegning billede field
+                        const updatedFieldData = {
+                            ...item.fieldData,
+                            'plantegning-billede': assetUrl  // Adjust field name as needed
+                        };
+                        
+                        const updatedItem = await this.updateCollectionItem(
+                            lejlighedCollection.id, 
+                            item.id, 
+                            updatedFieldData
+                        );
+                        
+                        updatedItems.push(updatedItem);
+                        console.log(`✅ Opdateret ${lejlighedNummer}: ${assetUrl}`);
+                        
+                        // Wait between requests
+                        await new Promise(resolve => setTimeout(resolve, 300));
+                        
+                    } catch (error) {
+                        console.error(`❌ Fejl ved opdatering af ${lejlighedNummer}:`, error.message);
+                    }
+                } else {
+                    console.log(`⚠️ Item for ${lejlighedNummer} ikke fundet`);
+                }
+            }
+            
+            console.log(`🎉 Opdateret ${updatedItems.length} lejligheder med plantegning billeder`);
+            return updatedItems;
+            
+        } catch (error) {
+            console.error("❌ Fejl ved opdatering af plantegning billeder:", error.message);
+            throw error;
+        }
+    }
 }
 
 // Test and demo function
@@ -268,20 +525,221 @@ async function main() {
         await webflow.listAssetFolders();
         console.log("");
         
-        // Erstat Vesterbrogade mappenavne
-        console.log("🔧 Erstatter Vesterbrogade mappenavne...\n");
+        // Strandlodsvej: Opdater alle etager med plantegning billeder
+        console.log("🏠 Strandlodsvej: Opdaterer alle etager med plantegning billeder...\n");
         
-        const nameMapping = {
-            'Vesterbrogade_Etage_1': 'Etage_1',
-            'Vesterbrogade_Etage_2': 'Etage_2',
-            'Vesterbrogade_Etage_3': 'Etage_3',
-            'Vesterbrogade_Etage_4': 'Etage_4',
-            'Vesterbrogade_Etage_5': 'Etage_5'
+        // 1. Liste alle collections
+        await webflow.listCollections();
+        console.log("");
+        
+        // 2. Definer alle Strandlodsvej etager
+        const strandlodsvejaEtager = [
+            { etage: 0, displayName: 'stuen' },
+            { etage: 1, displayName: '1. sal' },
+            { etage: 2, displayName: '2. sal' },
+            { etage: 3, displayName: '3. sal' },
+            { etage: 4, displayName: '4. sal' },
+            { etage: 5, displayName: '5. sal' },
+            { etage: 6, displayName: '6. sal' },
+            { etage: 7, displayName: '7. sal' }
+        ];
+        
+        let totalProcessed = 0;
+        let totalUpdated = 0;
+        
+        // 3. Proces hver etage
+        for (const etageInfo of strandlodsvejaEtager) {
+            console.log(`\n🏢 Behandler ${etageInfo.displayName} (Etage_${etageInfo.etage})...`);
+            
+            try {
+                // Hent SVG assets fra etage folder
+                const folderName = `Etage_${etageInfo.etage}`;
+                const pattern = new RegExp(`Lejlighed_${etageInfo.etage}_\\d+\\.svg`);
+                const assets = await webflow.findAssetsByPattern(folderName, pattern);
+                
+                if (assets.length > 0) {
+                    console.log(`📂 Fundet ${assets.length} lejlighed SVG'er:`);
+                    
+                    // Opret mapping mellem lejlighed nummer og asset URL
+                    const assetMappings = {};
+                    assets.forEach(asset => {
+                        const match = asset.displayName.match(new RegExp(`Lejlighed_${etageInfo.etage}_(\\d+)\\.svg`));
+                        if (match) {
+                            const lejlighedNummer = match[1];
+                            const assetUrl = asset.hostedUrl || asset.url;
+                            if (assetUrl) {
+                                assetMappings[`Lejlighed_${etageInfo.etage}_${lejlighedNummer}`] = assetUrl;
+                                console.log(`  ✅ ${asset.displayName}`);
+                            }
+                        }
+                    });
+                    
+                    totalProcessed += Object.keys(assetMappings).length;
+                    
+                    // Opdater CMS (kun hvis der er mappings)
+                    if (Object.keys(assetMappings).length > 0) {
+                        console.log(`🔄 Opdaterer ${Object.keys(assetMappings).length} lejligheder i CMS...`);
+                        const result = await webflow.updatePlantegningBilleder('Strandlodsvej', etageInfo.displayName, assetMappings);
+                        totalUpdated += result.length;
+                        
+                        // Vent mellem etager for at undgå rate limiting
+                        if (etageInfo.etage < 7) {
+                            console.log("⏳ Venter 2 sekunder før næste etage...");
+                            await new Promise(resolve => setTimeout(resolve, 2000));
+                        }
+                    }
+                } else {
+                    console.log(`⚠️ Ingen lejlighed SVG'er fundet i ${folderName}`);
+                }
+                
+            } catch (error) {
+                console.error(`❌ Fejl ved behandling af ${etageInfo.displayName}:`, error.message);
+            }
+        }
+        
+        console.log(`\n🎉 Strandlodsvej (Etage 1-7) komplet!`);
+        console.log(`📊 Statistik (Etager 1-7):`);
+        console.log(`  - ${totalProcessed} assets behandlet`);
+        console.log(`  - ${totalUpdated} CMS items opdateret`);
+        
+        // Special handling for Etage_0 - use direct URLs since assets are uploaded but not in correct folder
+        console.log("\n🔧 SPECIAL: Opdaterer Etage_0 med direkte URL'er...");
+        const etage0DirectMappings = {
+            'Lejlighed_0_1': 'https://cdn.prod.website-files.com/686383aa51b13c9f891f8227/68af17826ece949646578971_Lejlighed_0_1.svg',
+            'Lejlighed_0_2': 'https://cdn.prod.website-files.com/686383aa51b13c9f891f8227/68af1782ec60fe15a84d92c2_Lejlighed_0_2.svg',
+            'Lejlighed_0_3': 'https://cdn.prod.website-files.com/686383aa51b13c9f891f8227/68af1782a95ad287011426e0_Lejlighed_0_3.svg',
+            'Lejlighed_0_4': 'https://cdn.prod.website-files.com/686383aa51b13c9f891f8227/68af17827bd2e883120cb800_Lejlighed_0_4.svg',
+            'Lejlighed_0_5': 'https://cdn.prod.website-files.com/686383aa51b13c9f891f8227/68af17817bd3c9dbb2980b38_Lejlighed_0_5.svg',
+            'Lejlighed_0_6': 'https://cdn.prod.website-files.com/686383aa51b13c9f891f8227/68af178250f0742ebc874595_Lejlighed_0_6.svg',
+            'Lejlighed_0_7': 'https://cdn.prod.website-files.com/686383aa51b13c9f891f8227/68af17825217e26adcb3493c_Lejlighed_0_7.svg'
         };
         
-        await webflow.replaceFolderNames(nameMapping, 'Vesterbrogade');
+        console.log(`📋 Opdaterer ${Object.keys(etage0DirectMappings).length} Etage_0 lejligheder med direkte URL'er:`);
+        Object.entries(etage0DirectMappings).forEach(([key, url]) => {
+            console.log(`  ✅ ${key}`);
+        });
         
-        console.log("✅ Test fuldført succesfuldt!");
+        let etage0Count = 0;
+        try {
+            const etage0Result = await webflow.updatePlantegningBilleder('Strandlodsvej', 'stuen', etage0DirectMappings);
+            etage0Count = etage0Result.length;
+            console.log(`🎉 Etage_0 komplet: ${etage0Count} lejligheder opdateret`);
+        } catch (etage0Error) {
+            console.error("❌ Fejl ved Etage_0 opdatering:", etage0Error.message);
+        }
+        
+        console.log(`\n🏆 TOTAL STRANDLODSVEJ RESULTAT:`);
+        console.log(`📊 Komplet statistik (alle etager):`);
+        console.log(`  - ${totalProcessed + 7} assets behandlet`);
+        console.log(`  - ${totalUpdated + etage0Count} CMS items opdateret`);
+        console.log(`  - Alle 8 etager (stuen + 1.-7. sal) ✅`);
+        
+        console.log("✅ Komplet Strandlodsvej opdatering fuldført!");
+        
+        // VESTERBROGADE: Opdater alle etager med plantegning billeder
+        console.log("\n\n🏢 VESTERBROGADE: Opdaterer alle etager med plantegning billeder...\n");
+        
+        // 1. Liste alle collections (allerede hentet, men vis igen for kontekst)
+        console.log("📊 Bruger samme CMS collection: Lejligheder");
+        
+        // 2. Definer alle Vesterbrogade etager (baseret på folder struktur)
+        const vesterbrogatetager = [
+            { etage: 1, displayName: '1. sal' },
+            { etage: 2, displayName: '2. sal' },
+            { etage: 3, displayName: '3. sal' },
+            { etage: 4, displayName: '4. sal' },
+            { etage: 5, displayName: '5. sal' }
+        ];
+        
+        let vesterbrogadeTotalProcessed = 0;
+        let vesterbrogadeTotalUpdated = 0;
+        
+        // 3. Proces hver Vesterbrogade etage
+        for (const etageInfo of vesterbrogatetager) {
+            console.log(`\n🏢 Behandler Vesterbrogade ${etageInfo.displayName} (Etage_${etageInfo.etage})...`);
+            
+            try {
+                // Find Vesterbrogade parent folder først
+                const vesterbroadgParent = await webflow.findFolderByName('Vesterbrogade');
+                if (!vesterbroadgParent) {
+                    console.log("❌ Vesterbrogade parent folder ikke fundet");
+                    continue;
+                }
+                
+                // Hent assets fra Vesterbrogade etage folder
+                const folderName = `Etage_${etageInfo.etage}`;
+                const pattern = new RegExp(`Lejlighed_${etageInfo.etage}_\\d+\\.svg`);
+                
+                // Søg specifikt under Vesterbrogade parent
+                const folders = await webflow.listAssetFolders();
+                const vesterbrogadeEtageFolder = folders.find(folder => 
+                    folder.displayName === folderName && 
+                    folder.parentFolder === vesterbroadgParent.id
+                );
+                
+                if (!vesterbrogadeEtageFolder) {
+                    console.log(`⚠️ ${folderName} folder ikke fundet under Vesterbrogade`);
+                    continue;
+                }
+                
+                const assets = await webflow.listAssetsInFolder(vesterbrogadeEtageFolder.id);
+                const lejlighedAssets = assets.filter(asset => 
+                    asset.displayName && pattern.test(asset.displayName)
+                );
+                
+                if (lejlighedAssets.length > 0) {
+                    console.log(`📂 Fundet ${lejlighedAssets.length} lejlighed SVG'er:`);
+                    
+                    // Opret mapping mellem lejlighed nummer og asset URL
+                    const assetMappings = {};
+                    lejlighedAssets.forEach(asset => {
+                        const match = asset.displayName.match(new RegExp(`Lejlighed_${etageInfo.etage}_(\\d+)\\.svg`));
+                        if (match) {
+                            const lejlighedNummer = match[1];
+                            const assetUrl = asset.hostedUrl || asset.url;
+                            if (assetUrl) {
+                                assetMappings[`Lejlighed_${etageInfo.etage}_${lejlighedNummer}`] = assetUrl;
+                                console.log(`  ✅ ${asset.displayName}`);
+                            }
+                        }
+                    });
+                    
+                    vesterbrogadeTotalProcessed += Object.keys(assetMappings).length;
+                    
+                    // Opdater CMS (kun hvis der er mappings)
+                    if (Object.keys(assetMappings).length > 0) {
+                        console.log(`🔄 Opdaterer ${Object.keys(assetMappings).length} lejligheder i CMS...`);
+                        const result = await webflow.updatePlantegningBilleder('Vesterbrogade', etageInfo.displayName, assetMappings);
+                        vesterbrogadeTotalUpdated += result.length;
+                        
+                        // Vent mellem etager for at undgå rate limiting
+                        if (etageInfo.etage < 5) {
+                            console.log("⏳ Venter 2 sekunder før næste etage...");
+                            await new Promise(resolve => setTimeout(resolve, 2000));
+                        }
+                    }
+                } else {
+                    console.log(`⚠️ Ingen lejlighed SVG'er fundet i ${folderName}`);
+                }
+                
+            } catch (error) {
+                console.error(`❌ Fejl ved behandling af Vesterbrogade ${etageInfo.displayName}:`, error.message);
+            }
+        }
+        
+        console.log(`\n🎉 Vesterbrogade komplet!`);
+        console.log(`📊 Vesterbrogade statistik:`);
+        console.log(`  - ${vesterbrogadeTotalProcessed} assets behandlet`);
+        console.log(`  - ${vesterbrogadeTotalUpdated} CMS items opdateret`);
+        
+        console.log(`\n🏆 SAMLET RESULTAT (STRANDLODSVEJ + VESTERBROGADE):`);
+        console.log(`📊 Total statistik:`);
+        console.log(`  - ${totalProcessed + 7 + vesterbrogadeTotalProcessed} assets behandlet`);
+        console.log(`  - ${totalUpdated + etage0Count + vesterbrogadeTotalUpdated} CMS items opdateret`);
+        console.log(`  - Strandlodsvej: 8 etager (stuen + 1.-7. sal) ✅`);
+        console.log(`  - Vesterbrogade: 5 etager (1.-5. sal) ✅`);
+        
+        console.log("✅ KOMPLET opdatering af ALLE ejendomme fuldført!");
         
     } catch (error) {
         console.error("❌ Test fejlede:", error.message);
