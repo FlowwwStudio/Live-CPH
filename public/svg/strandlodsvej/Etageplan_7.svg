@@ -17,7 +17,7 @@
 
       .st7 {
         fill: #5dcd90;
-        fill-opacity: 0;
+        opacity: 0;
       }
 
       .st8, .st9, .st10 {
@@ -503,27 +503,37 @@
     <rect class="st4" x="1316.1" y="951.4" width="3" height="4.4"/>
     <g class="st8">
       <g class="st8">
-        <text class="st9" transform="translate(1342 697)"><tspan x="0" y="0">7/1</tspan></text>
+        <g class="st8">
+          <text class="st9" transform="translate(1342 697)"><tspan x="0" y="0">7/1</tspan></text>
+        </g>
       </g>
     </g>
     <g class="st8">
       <g class="st8">
-        <text class="st9" transform="translate(1342 832.9)"><tspan x="0" y="0">7/2</tspan></text>
+        <g class="st8">
+          <text class="st9" transform="translate(1342 832.9)"><tspan x="0" y="0">7/2</tspan></text>
+        </g>
       </g>
     </g>
     <g class="st8">
       <g class="st8">
-        <text class="st9" transform="translate(1342 982.3)"><tspan x="0" y="0">7/3</tspan></text>
+        <g class="st8">
+          <text class="st9" transform="translate(1342 982.3)"><tspan x="0" y="0">7/3</tspan></text>
+        </g>
       </g>
     </g>
     <g class="st8">
       <g class="st8">
-        <text class="st9" transform="translate(1010 982.3)"><tspan x="0" y="0">7/4</tspan></text>
+        <g class="st8">
+          <text class="st9" transform="translate(1010 982.3)"><tspan x="0" y="0">7/4</tspan></text>
+        </g>
       </g>
     </g>
     <g class="st8">
       <g class="st8">
-        <text class="st9" transform="translate(1010 832.9)"><tspan x="0" y="0">7/5</tspan></text>
+        <g class="st8">
+          <text class="st9" transform="translate(1010 832.9)"><tspan x="0" y="0">7/5</tspan></text>
+        </g>
       </g>
     </g>
     <g>
@@ -906,12 +916,14 @@
   </g>
   <g class="st8">
     <g class="st8">
-      <text class="st10" transform="translate(2093.8 277.1)"><tspan x="0" y="0">N</tspan></text>
+      <g class="st8">
+        <text class="st10" transform="translate(2093.8 277.1)"><tspan x="0" y="0">N</tspan></text>
+      </g>
     </g>
   </g>
-  <rect id="STR-7-01" class="st7" x="1230.2" y="601" width="200" height="152"/>
-  <polygon id="STR-7-05" class="st7" points="1166.7 769.8 1166.7 890.5 1079.1 890.5 1079.1 933.7 966.6 933.7 966.6 769.8 1166.7 769.8"/>
-  <rect id="STR-7-02" class="st7" x="1229.6" y="754.8" width="200" height="142"/>
-  <rect id="STR-7-03" class="st7" x="1229.9" y="899.8" width="200.1" height="147.2"/>
-  <polygon id="STR-7-04" class="st7" points="1166.4 890.5 1166.4 1044.4 1139.1 1044.4 1139.1 1100.6 1002.6 1100.8 1002.6 1044.4 966.6 1044.4 966.6 933.7 1079.1 933.7 1079.1 890.5 1166.4 890.5"/>
+  <polygon id="STR-7-01" class="st7" points="1437 625.6 1437 635.3 1430.2 635.3 1430.2 601 1230.2 601 1230.2 753 1430.2 753 1430.2 722.8 1437 722.8 1437 733 1485 733 1485 625.6 1437 625.6"/>
+  <polygon id="STR-7-05" class="st7" points="966.6 769.8 966.6 790.5 959.4 790.5 959.4 622.6 915 622.6 915 790.5 915 862.9 915 874 959.4 874 959.4 862.9 966.6 862.9 966.6 933.7 1079.1 933.7 1079.1 890.5 1166.7 890.5 1166.7 769.8 966.6 769.8"/>
+  <polygon id="STR-7-02" class="st7" points="1437 767.8 1437 778 1429.6 778 1429.6 754.8 1229.6 754.8 1229.6 896.8 1429.6 896.8 1429.6 865.6 1437 865.6 1437 875.2 1474.2 875.2 1474.2 865.6 1474.2 778 1474.2 767.8 1437 767.8"/>
+  <polygon id="STR-7-03" class="st7" points="1430 1047 1430 899.8 1229.9 899.8 1229.9 1047 1285.1 1047 1285.1 1054 1274.4 1054 1274.4 1102 1381.8 1102 1381.8 1054 1372.8 1054 1372.8 1047 1430 1047"/>
+  <polygon id="STR-7-04" class="st7" points="1079.1 890.5 1079.1 933.7 966.6 933.7 966.6 937.5 915.1 937.5 915.1 1027.3 966.6 1027.3 966.6 1044.4 1002.6 1044.4 1002.6 1100.8 1139.1 1100.6 1139.1 1044.4 1166.4 1044.4 1166.4 890.5 1079.1 890.5"/>
 </svg>
