@@ -43,7 +43,7 @@ export default function SVGViewer({ property, floor }) {
     console.log('🎯 Enhancing SVG for:', property, floor);
     
     // Find all apartment elements with ID matching apartment pattern
-    const apartmentElements = svgContainerRef.current.querySelectorAll('[id^="VES-"], [id^="STR-"], [id^="HER-"], [id^="NFA-"]');
+    const apartmentElements = svgContainerRef.current.querySelectorAll('[id^="VES-"], [id^="STR-"], [id^="HER-"], [id^="DOR-"], [id^="NFA-"]');
     
     console.log('📍 Found apartment elements:', apartmentElements.length);
     
@@ -53,7 +53,7 @@ export default function SVGViewer({ property, floor }) {
       
       console.log(`🏠 Setting up apartment ${index + 1}:`, apartmentId);
       
-      if (apartmentId && /^(VES|STR|HER|NFA)-\d+-\d+$/.test(apartmentId)) {
+      if (apartmentId && /^(VES|STR|HER|DOR|NFA)-\d+-\d+$/.test(apartmentId)) {
         // Add click handler
         element.addEventListener('click', (e) => {
           e.preventDefault();
@@ -79,7 +79,7 @@ export default function SVGViewer({ property, floor }) {
     const style = document.createElement('style');
     style.textContent = `
       /* Make all apartments interactive using ID selectors - override SVG CSS */
-      svg [id^="VES-"], svg [id^="STR-"], svg [id^="HER-"], svg [id^="NFA-"] {
+      svg [id^="VES-"], svg [id^="STR-"], svg [id^="HER-"], svg [id^="DOR-"], svg [id^="NFA-"] {
         pointer-events: all !important;
         cursor: pointer !important;
         transition: opacity 0.3s ease !important;
@@ -87,7 +87,7 @@ export default function SVGViewer({ property, floor }) {
       }
       
       /* apartments hover effect - higher specificity to beat SVG internal CSS */
-      svg [id^="VES-"]:hover, svg [id^="STR-"]:hover, svg [id^="HER-"]:hover, svg [id^="NFA-"]:hover {
+      svg [id^="VES-"]:hover, svg [id^="STR-"]:hover, svg [id^="HER-"]:hover, svg [id^="DOR-"]:hover, svg [id^="NFA-"]:hover {
         opacity: 0.5 !important; /* This should now work */
       }
       
