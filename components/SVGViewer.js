@@ -78,16 +78,17 @@ export default function SVGViewer({ property, floor }) {
     // Apply CSS for interactivity based on ID selectors  
     const style = document.createElement('style');
     style.textContent = `
-      /* Make all apartments interactive using ID selectors */
-      [id^="VES-"], [id^="STR-"], [id^="HER-"], [id^="NFA-"] {
+      /* Make all apartments interactive using ID selectors - override SVG CSS */
+      svg [id^="VES-"], svg [id^="STR-"], svg [id^="HER-"], svg [id^="NFA-"] {
         pointer-events: all !important;
         cursor: pointer !important;
-        transition: fill-opacity 0.3s ease;
+        transition: opacity 0.3s ease !important;
+        opacity: 0 !important;
       }
       
-      /* apartments hover effect - just change opacity to show interaction */
-      [id^="VES-"]:hover, [id^="STR-"]:hover, [id^="HER-"]:hover, [id^="NFA-"]:hover {
-        fill-opacity: 0.5 !important;
+      /* apartments hover effect - higher specificity to beat SVG internal CSS */
+      svg [id^="VES-"]:hover, svg [id^="STR-"]:hover, svg [id^="HER-"]:hover, svg [id^="NFA-"]:hover {
+        opacity: 0.5 !important; /* This should now work */
       }
       
       /* General styling for interactive elements */
