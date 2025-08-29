@@ -18,6 +18,16 @@ export default function Home() {
         name: 'Vesterbrogade',
         slug: 'vesterbrogade',
         floors: [1, 2, 3, 4, 5]
+      },
+      {
+        name: 'Dortheavej',
+        slug: 'dortheavej',
+        floors: [0, 1, 2, 3, 4]
+      },
+      {
+        name: 'Hermodsvej',
+        slug: 'hermodsvej',
+        floors: [0, 1, 2, 3, 4]
       }
     ]);
   }, []);

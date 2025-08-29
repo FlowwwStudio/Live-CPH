@@ -178,13 +178,14 @@ Ensure each apartment element in your SVG files has an `id` attribute in the cor
 - Use 3-letter abbreviations
 - `STR` = Strandlodsvej
 - `VBG` = Vesterbrogade  
-- `HER` = Hermodsgade
+- `HER` = Hermodsvej
+- `DOR` = Dortheavej
 - `NFA` = Nørre Farimagsgade
 
 **Important:** When adding new properties, you must also update the CSS selectors in `components/SVGViewer.js` to include the new property code:
 ```javascript
-// Add your new property code to these selectors:
-'[id^="VES-"], [id^="STR-"], [id^="HER-"], [id^="NFA-"], [id^="NEW-"]'
+// Current selectors include:
+'[id^="VES-"], [id^="STR-"], [id^="HER-"], [id^="DOR-"], [id^="NFA-"]'
 ```
 
 ### 5. Test Your New Property
