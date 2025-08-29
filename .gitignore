@@ -5,3 +5,6 @@ node_modules/
 # Debug files
 debug-*.js
 *.debug.js
+
+# Create new folder script
+create-new-folder.js

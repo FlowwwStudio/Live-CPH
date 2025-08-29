@@ -178,7 +178,7 @@ Ensure each apartment element in your SVG files has an `id` attribute in the cor
 - Use 3-letter abbreviations
 - `STR` = Strandlodsvej
 - `VBG` = Vesterbrogade  
-- `HER` = Hermodsvej
+- `HER` = Hermodsgade
 - `DOR` = Dortheavej
 - `NFA` = Nørre Farimagsgade
 
