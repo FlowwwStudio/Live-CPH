@@ -1,20 +1,20 @@
 ---
 # Webflow CMS Fields for Lejligheder Collection
-name: "Vesterbrogade, {{ETAGE}}, {{LEJLIGHED_NR}}"
+name: "{{EJENDOM}}, {{ETAGE}}, {{LEJLIGHED_NR}}"
 slug: "{{APARTMENT_ID}}"
-property-code: "STR"
+property-code: "{{PROPERTY_CODE}}"
 building-letter: null
 apartment-number: "{{LEJLIGHED_NR_PADDED}}"
 apartment-id: "{{APARTMENT_ID}}"
 floor: "{{FLOOR_OPTION_ID}}"
-ejendom: "6863e06cd179b6a862d1eccc"  # Strandlodsvej reference
+ejendom: "{{EJENDOM_COLLECTION_ID}}"
 ---
 
 ## Navn
-<p id="">Vesterbrogade, {{ETAGE}}, {{LEJLIGHED_NR}}</p>
+<p id="">{{EJENDOM}}, {{ETAGE}}, {{LEJLIGHED_NR}}</p>
 
 ## Adresse  
-<p>Vesterbrogade 107, 1620 København V, {{ETAGE_NAVN}} – Lejlighed {{LEJLIGHED_NR}}</p>
+<p>{{ADRESSE}}, {{ETAGE_NAVN}} – Lejlighed {{LEJLIGHED_NR}}</p>
 
 ## Brutto kvm
 <p>37 kvm.</p>
@@ -23,9 +23,6 @@ ejendom: "6863e06cd179b6a862d1eccc"  # Strandlodsvej reference
 <p>1</p>
 
 ## Faciliteter
-<ul>
-    <li>
-</ul>
 <p id="">· Adgang til fællesvaskeri</p>
 <p id="">· Privat depotrum i kælderen</p>  
 <p id="">· Altan (til de boliger med altan)</p>

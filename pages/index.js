@@ -24,11 +24,11 @@ export default function Home() {
         slug: 'dortheavej',
         floors: [0, 1, 2, 3, 4]
       },
-      {
-        name: 'Hermodsvej',
-        slug: 'hermodsvej',
-        floors: [0, 1, 2, 3, 4]
-      }
+              {
+          name: 'Hermodsgade',
+          slug: 'hermodsgade',
+          floors: [0, 1, 2, 3, 4]
+        }
     ]);
   }, []);
 
