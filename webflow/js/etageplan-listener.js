@@ -1,3 +1,4 @@
+
 /**
  * LiveCPH Etageplan PostMessage Listener
  * 
@@ -7,8 +8,11 @@
  */
 
 (function() {
+  console.log('🚀 Etageplan Listener script loaded');
+  
   // Wait for DOM to be ready
   document.addEventListener('DOMContentLoaded', function() {
+    console.log('📄 DOM ready, initializing etageplan listener');
     
     // Function to open apartment modal
     function openApartmentModal(apartmentId) {
@@ -24,8 +28,11 @@
         if (modalWrapper) {
           console.log('✅ Opening modal for apartment:', apartmentId);
           
-          // Close any currently open modals first
-          closeAllModals();
+          // Close any currently open modals first (but don't enable scroll yet)
+          closeAllModalsOnly();
+          
+          // Disable scroll when opening modal
+          disableScroll();
           
           // Add .is-open class to show this modal
           modalWrapper.classList.add('is-open');
@@ -37,23 +44,71 @@
       }
     }
     
+    // Function to disable scroll on body
+    function disableScroll() {
+      document.body.style.overflow = 'hidden';
+      document.body.style.paddingRight = getScrollbarWidth() + 'px';
+      console.log('🚫 Scroll disabled');
+    }
+    
+    // Function to enable scroll on body
+    function enableScroll() {
+      document.body.style.overflow = '';
+      document.body.style.paddingRight = '';
+      console.log('✅ Scroll enabled');
+    }
+    
+    // Function to get scrollbar width to prevent layout shift
+    function getScrollbarWidth() {
+      const outer = document.createElement('div');
+      outer.style.visibility = 'hidden';
+      outer.style.overflow = 'scroll';
+      outer.style.msOverflowStyle = 'scrollbar';
+      document.body.appendChild(outer);
+      
+      const inner = document.createElement('div');
+      outer.appendChild(inner);
+      
+      const scrollbarWidth = outer.offsetWidth - inner.offsetWidth;
+      outer.parentNode.removeChild(outer);
+      
+      return scrollbarWidth;
+    }
+    
     // Function to close all modals
     function closeAllModals() {
       const openModals = document.querySelectorAll('.apartment_modal-wrapper.is-open');
       openModals.forEach(modal => {
         modal.classList.remove('is-open');
       });
+      
+      // Enable scroll when closing all modals
+      enableScroll();
       console.log('🔒 Closed all modals');
+    }
+    
+    // Function to close all modals without enabling scroll (for internal use)
+    function closeAllModalsOnly() {
+      const openModals = document.querySelectorAll('.apartment_modal-wrapper.is-open');
+      openModals.forEach(modal => {
+        modal.classList.remove('is-open');
+      });
+      console.log('🔒 Closed all modals (scroll unchanged)');
     }
     
     // Function to close specific modal
     function closeModal(modalWrapper) {
       modalWrapper.classList.remove('is-open');
+      
+      // Enable scroll when closing modal
+      enableScroll();
       console.log('🔒 Modal closed');
     }
     
     // Listen for messages from the SVG iframe
     window.addEventListener('message', function(event) {
+      console.log('📨 Received postMessage:', event.data);
+      
       // Validate the message type
       if (event.data && event.data.type === 'openApartment') {
         const apartmentId = event.data.apartmentId;
