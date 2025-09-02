@@ -44,11 +44,28 @@
       }
     }
     
-    // Function to disable scroll on body (works with Lenis)
+     // Function to disable scroll on body (works with Lenis)
     function disableScroll() {
       // Check if Lenis is available
       if (window.lenis) {
         window.lenis.stop();
+        // Allow scroll within modals by re-enabling Lenis for modal content
+        setTimeout(() => {
+          const openModal = document.querySelector('.apartment_modal-wrapper.is-open');
+          if (openModal) {
+            const modalContent = openModal.querySelector('.apartment_modal-content, .modal-content, [data-modal-content]');
+            if (modalContent) {
+              // Temporarily enable Lenis for modal content
+              window.lenis.start();
+              // Stop Lenis again but allow modal to scroll
+              setTimeout(() => {
+                window.lenis.stop();
+                // Add wheel event listener to modal for manual scroll
+                modalContent.addEventListener('wheel', handleModalScroll, { passive: false });
+              }, 10);
+            }
+          }
+        }, 50);
         console.log('🚫 Lenis scroll disabled');
       } else {
         // Fallback for normal scroll
@@ -58,8 +75,33 @@
       }
     }
     
+    // Function to handle scroll within modal
+    function handleModalScroll(e) {
+      const modalContent = e.currentTarget;
+      const scrollTop = modalContent.scrollTop;
+      const scrollHeight = modalContent.scrollHeight;
+      const clientHeight = modalContent.clientHeight;
+      
+      // Allow scroll if there's content to scroll
+      if (scrollHeight > clientHeight) {
+        // Check if we're at the top or bottom
+        if ((scrollTop <= 0 && e.deltaY < 0) || 
+            (scrollTop >= scrollHeight - clientHeight && e.deltaY > 0)) {
+          e.preventDefault();
+        }
+      } else {
+        e.preventDefault();
+      }
+    }
+    
     // Function to enable scroll on body (works with Lenis)
     function enableScroll() {
+      // Remove modal scroll event listeners
+      const modalContents = document.querySelectorAll('.apartment_modal-content, .modal-content, [data-modal-content]');
+      modalContents.forEach(modalContent => {
+        modalContent.removeEventListener('wheel', handleModalScroll);
+      });
+      
       // Check if Lenis is available
       if (window.lenis) {
         window.lenis.start();

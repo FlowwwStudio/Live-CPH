@@ -1,3 +1,412 @@
+<!-- Site Scripts -->
+
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.2.3/dist/lenis.min.js"></script> 
+<!-- Page Transition 
+<script>
+$(document).ready(function() {
+  const wfIx = Webflow.require("ix3");
+  
+  // Opening animation (on load)
+  wfIx.emit("transition enter");
+  
+  // Click animation (on link click)
+  $("a:not(.excluded-class)").on("click", function (e) {
+    const url = $(this).attr("href");
+    
+    // Link-kontrol
+    if (
+      $(this).prop("hostname") === window.location.hostname &&
+      !url.includes("#") &&
+      $(this).attr("target") !== "_blank"
+    ) {
+      e.preventDefault();
+      
+      // Start leave animation
+      wfIx.emit("transition leave");
+      
+      // Navigate after animation duration (adjust timing as needed)
+      setTimeout(() => {
+        window.location.href = url;
+      }, 800); // Juster dette tal til din animations varighed i ms
+    }
+  });
+  
+  // Handle back/forward navigation
+  window.onpageshow = function (event) {
+    if (event.persisted) window.location.reload();
+  };
+});
+</script>
+
+<!-- Form validator -->
+<script>
+function initAdvancedFormValidation(){const forms=document.querySelectorAll("[data-form-validate]");forms.forEach(formContainer=>{const startTime=(new Date).getTime(),form=formContainer.querySelector("form");if(!form)return;const validateFields=form.querySelectorAll("[data-validate]"),dataSubmit=form.querySelector("[data-submit]");if(!dataSubmit)return;const realSubmitInput=dataSubmit.querySelector('input[type="submit"]');function isSpam(){const currentTime=(new Date).getTime();return currentTime-startTime<5e3}function validateAndStartLiveValidationForAll(){let allValid=!0,firstInvalidField=null;return validateFields.forEach((function(fieldGroup){const input=fieldGroup.querySelector("input, textarea, select"),radioCheckGroup=fieldGroup.querySelector("[data-radiocheck-group]");if(input||radioCheckGroup){if(input&&(input.__validationStarted=!0),radioCheckGroup){radioCheckGroup.__validationStarted=!0;const inputs=radioCheckGroup.querySelectorAll('input[type="radio"], input[type="checkbox"]');inputs.forEach((function(input){input.__validationStarted=!0}))}updateFieldStatus(fieldGroup),isValid(fieldGroup)||(allValid=!1,firstInvalidField||(firstInvalidField=input||radioCheckGroup.querySelector("input")))}})),!allValid&&firstInvalidField&&firstInvalidField.focus(),allValid}function isValid(fieldGroup){const radioCheckGroup=fieldGroup.querySelector("[data-radiocheck-group]");if(radioCheckGroup){const inputs=radioCheckGroup.querySelectorAll('input[type="radio"], input[type="checkbox"]'),checkedInputs=radioCheckGroup.querySelectorAll("input:checked"),min=parseInt(radioCheckGroup.getAttribute("min"))||1,max=parseInt(radioCheckGroup.getAttribute("max"))||inputs.length,checkedCount=checkedInputs.length;return"radio"===inputs[0].type?checkedCount>=1:1===inputs.length?inputs[0].checked:checkedCount>=min&&checkedCount<=max}{const input=fieldGroup.querySelector("input, textarea, select");if(!input)return!1;let valid=!0;const min=parseInt(input.getAttribute("min"))||0,max=parseInt(input.getAttribute("max"))||1/0,value=input.value.trim(),length=value.length;if("select"===input.tagName.toLowerCase())""!==value&&"disabled"!==value&&"null"!==value&&"false"!==value||(valid=!1);else if("email"===input.type){const emailPattern=/^[^\s@]+@[^\s@]+\.[^\s@]+$/;valid=emailPattern.test(value)}else input.hasAttribute("min")&&length<min&&(valid=!1),input.hasAttribute("max")&&length>max&&(valid=!1);return valid}}function updateFieldStatus(fieldGroup){const radioCheckGroup=fieldGroup.querySelector("[data-radiocheck-group]");if(radioCheckGroup){const inputs=radioCheckGroup.querySelectorAll('input[type="radio"], input[type="checkbox"]'),checkedInputs=radioCheckGroup.querySelectorAll("input:checked");checkedInputs.length>0?fieldGroup.classList.add("is--filled"):fieldGroup.classList.remove("is--filled");const valid=isValid(fieldGroup);if(valid)fieldGroup.classList.add("is--success"),fieldGroup.classList.remove("is--error");else{fieldGroup.classList.remove("is--success");const anyInputValidationStarted=Array.from(inputs).some(input=>input.__validationStarted);anyInputValidationStarted?fieldGroup.classList.add("is--error"):fieldGroup.classList.remove("is--error")}}else{const input=fieldGroup.querySelector("input, textarea, select");if(!input)return;const value=input.value.trim();value?fieldGroup.classList.add("is--filled"):fieldGroup.classList.remove("is--filled");const valid=isValid(fieldGroup);valid?(fieldGroup.classList.add("is--success"),fieldGroup.classList.remove("is--error")):(fieldGroup.classList.remove("is--success"),input.__validationStarted?fieldGroup.classList.add("is--error"):fieldGroup.classList.remove("is--error"))}}realSubmitInput&&(validateFields.forEach((function(fieldGroup){const select=fieldGroup.querySelector("select");if(select){const options=select.querySelectorAll("option");options.forEach((function(option){""!==option.value&&"disabled"!==option.value&&"null"!==option.value&&"false"!==option.value||option.setAttribute("disabled","disabled")}))}})),validateFields.forEach((function(fieldGroup){const input=fieldGroup.querySelector("input, textarea, select"),radioCheckGroup=fieldGroup.querySelector("[data-radiocheck-group]");if(radioCheckGroup){const inputs=radioCheckGroup.querySelectorAll('input[type="radio"], input[type="checkbox"]');inputs.forEach((function(input){input.__validationStarted=!1,input.addEventListener("change",(function(){requestAnimationFrame((function(){if(!input.__validationStarted){const checkedCount=radioCheckGroup.querySelectorAll("input:checked").length,min=parseInt(radioCheckGroup.getAttribute("min"))||1;checkedCount>=min&&(input.__validationStarted=!0)}input.__validationStarted&&updateFieldStatus(fieldGroup)}))})),input.addEventListener("blur",(function(){input.__validationStarted=!0,updateFieldStatus(fieldGroup)}))}))}else input&&(input.__validationStarted=!1,"select"===input.tagName.toLowerCase()?input.addEventListener("change",(function(){input.__validationStarted=!0,updateFieldStatus(fieldGroup)})):(input.addEventListener("input",(function(){const value=input.value.trim(),length=value.length,min=parseInt(input.getAttribute("min"))||0,max=parseInt(input.getAttribute("max"))||1/0;input.__validationStarted||("email"===input.type?isValid(fieldGroup)&&(input.__validationStarted=!0):(input.hasAttribute("min")&&length>=min||input.hasAttribute("max")&&length<=max)&&(input.__validationStarted=!0)),input.__validationStarted&&updateFieldStatus(fieldGroup)})),input.addEventListener("blur",(function(){input.__validationStarted=!0,updateFieldStatus(fieldGroup)}))))})),dataSubmit.addEventListener("click",(function(){if(validateAndStartLiveValidationForAll()){if(isSpam())return void alert("Form submitted too quickly. Please try again.");realSubmitInput.click()}})),form.addEventListener("keydown",(function(event){if("Enter"===event.key&&"TEXTAREA"!==event.target.tagName&&(event.preventDefault(),validateAndStartLiveValidationForAll())){if(isSpam())return void alert("Form submitted too quickly. Please try again.");realSubmitInput.click()}})))})}document.addEventListener("DOMContentLoaded",()=>{initAdvancedFormValidation()});
+</script>
+
+<!-- Dropdown Menu Hover -->
+
+<script>
+  gsap.registerPlugin(SplitText);
+
+  const items    = document.querySelectorAll('.nav_3_dropdown_link');
+  const thumb    = document.getElementById('apartment-thumb');
+  const address  = document.getElementById('apartment-address');
+  const units    = document.getElementById('apartment-units');
+  const built    = document.getElementById('apartment-built');
+  const intro    = document.getElementById('apartment-text');
+  const panel    = document.querySelector('.apartment-info-panel');
+
+  const staggeredTextTargets = [intro, address, units, built];
+  let splitInstances = [];
+  let currentImg = '';
+
+  function handleMouseEnter(item) {
+    const newImg   = item.dataset.img;
+    const newAddr  = item.dataset.address || '';
+    const newUnits = item.dataset.units ? `${item.dataset.units} lejligheder` : '';
+    const newBuilt = item.dataset.built ? `Opført ${item.dataset.built}` : '';
+    const newIntro = item.dataset.intro || '';
+
+    // Show image and panel
+    thumb.classList.add('is--active');
+    panel?.classList.add('is--active');
+
+    // Image transition
+    if (newImg && newImg !== currentImg) {
+      currentImg = newImg;
+
+      const clone = thumb.cloneNode();
+      clone.src = newImg;
+      Object.assign(clone.style, {
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        width: '100%',
+        height: '100%',
+        objectFit: 'cover',
+        zIndex: 2,
+        opacity: 0,
+        transition: 'opacity 0.4s ease'
+      });
+
+      thumb.parentElement.appendChild(clone);
+
+      requestAnimationFrame(() => {
+        clone.style.opacity = 1;
+      });
+
+      clone.addEventListener('transitionend', () => {
+        thumb.src = newImg;
+        clone.remove();
+      }, { once: true });
+    }
+
+    // Animate text
+    splitInstances.forEach(inst => inst.revert && inst.revert());
+    splitInstances = [];
+
+    intro.textContent   = newIntro;
+    address.textContent = newAddr;
+    units.textContent   = newUnits;
+    built.textContent   = newBuilt;
+
+    staggeredTextTargets.forEach((el, index) => {
+      if (!el.textContent.trim()) return;
+      gsap.set(el, { autoAlpha: 1 });
+
+      const split = SplitText.create(el, {
+        type: 'lines',
+        mask: 'lines',
+        autoSplit: true,
+        linesClass: 'line'
+      });
+
+      gsap.from(split.lines, {
+        yPercent: 110,
+        duration: 0.6,
+        stagger: 0.06,
+        ease: 'expo.out',
+        delay: 0.05 * index
+      });
+
+      splitInstances.push(split);
+    });
+  }
+
+  // Hover logic
+  items.forEach(item => {
+    item.addEventListener('mouseenter', () => handleMouseEnter(item));
+  });
+
+  const hoverZone = document.querySelector('.nav_3_dropdown_component');
+  if (hoverZone) {
+    hoverZone.addEventListener('mouseleave', () => {
+      thumb.classList.remove('is--active');
+      panel?.classList.remove('is--active');
+    });
+  }
+</script>
+
+<!-- Smooth Scroll -->
+
+<script>
+// Make Lenis globally accessible for other scripts
+window.lenis = new Lenis();
+window.lenis.on('scroll', ScrollTrigger.update);
+gsap.ticker.add((time) => {window.lenis.raf(time * 1000);});
+gsap.ticker.lagSmoothing(0);
+
+
+$("[data-lenis-start]").on("click", function () {
+  window.lenis.start();
+});
+$("[data-lenis-stop]").on("click", function () {
+  window.lenis.stop();
+});
+$("[data-lenis-toggle]").on("click", function () {
+  $(this).toggleClass("stop-scroll");
+  if ($(this).hasClass("stop-scroll")) {
+    window.lenis.stop();
+  } else {
+    window.lenis.start();
+  }
+});
+</script>
+
+
+<!-- Popup Modal -->
+
+<script>
+function initBoligModal() {
+  const modal = document.querySelector('[data-bolig-modal]');
+  
+  document.querySelectorAll('[data-bolig-modal-toggle]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      if (!modal) return;
+      const isActive = modal.getAttribute('data-bolig-modal-status') === 'active';
+      modal.setAttribute('data-bolig-modal-status', isActive ? 'not-active' : 'active');
+    });
+  });
+
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape' || event.keyCode === 27) {
+      modal?.setAttribute('data-bolig-modal-status', 'not-active');
+    }
+  });
+}
+
+function initSignupModal() {
+  const modal = document.querySelector('[data-signup-modal]');
+  
+  document.querySelectorAll('[data-signup-modal-toggle]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      if (!modal) return;
+      const isActive = modal.getAttribute('data-signup-modal-status') === 'active';
+      modal.setAttribute('data-signup-modal-status', isActive ? 'not-active' : 'active');
+    });
+  });
+
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape' || event.keyCode === 27) {
+      modal?.setAttribute('data-signup-modal-status', 'not-active');
+    }
+  });
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+  initBoligModal();
+  initSignupModal();
+});
+</script>
+
+<!-- Navbar Hide on Scroll -->
+
+<script>
+function isDesktopView() {
+  return window.innerWidth >= 992;
+}
+
+gsap.registerPlugin(ScrollTrigger)
+
+let navbarScrollTrigger;
+
+function initNavbarScrollAnimation() {
+  if (isDesktopView() && !navbarScrollTrigger) {
+    const navbarShowAnim = gsap.from('.navbar', {
+      yPercent: -100,
+      paused: true,
+      duration: 0.2
+    }).progress(1);
+
+    navbarScrollTrigger = ScrollTrigger.create({
+      start: "top top",
+      end: 99999,
+      onUpdate: (self) => {
+        self.direction === -1 ? navbarShowAnim.play() : navbarShowAnim.reverse();
+      }
+    });
+  }
+}
+
+function destroyNavbarScrollAnimation() {
+  if (navbarScrollTrigger) {
+    navbarScrollTrigger.kill();
+    navbarScrollTrigger = null;
+  }
+}
+
+window.addEventListener('resize', () => {
+  if (!isDesktopView()) {
+    destroyNavbarScrollAnimation();
+  } else {
+    initNavbarScrollAnimation();
+  }
+});
+
+initNavbarScrollAnimation();
+
+</script>
+
+
+
+<!-- Image Slider -->
+<script src="https://unpkg.com/split-type"></script>
+<script>
+let splitType = new SplitType(".slider_cms_title", {
+    types: "words", // Split into words
+    tagName: "span"
+});
+
+$(".slider_wrap").each(function () {
+    let childArrow = $(this).find(".slider_btn");
+    let childItems = $(this).find(".slider_cms_item").not('.w-condition-invisible').hide();
+    let childDots = $(this).find(".slider_dot_item").not('.w-condition-invisible');
+    let totalSlides = childItems.length;
+    let activeIndex = 0;
+
+    // Early return if no slides or dots found
+    if (totalSlides === 0 || childDots.length === 0) {
+        console.warn("Slider: No slides or dots found, skipping initialization");
+        return;
+    }
+
+    childItems.first().css("display", "flex");
+    
+    // Safe GSAP set with element check
+    let firstDotLine = childDots.eq(0).find(".slider_dot_line");
+    if (firstDotLine.length > 0) {
+        gsap.set(firstDotLine, { x: "0%" });
+    }
+
+    // DOT LINES
+    let tl2 = gsap.timeline({ repeat: -1 });
+    childDots.each(function (index) {
+        let dotLine = $(this).find(".slider_dot_line");
+        if (dotLine.length > 0) {
+            tl2.addLabel(`step${index}`);
+            tl2.to(dotLine, {
+                scaleX: "1.0",
+                ease: "none",
+                duration: 5,
+                onComplete: () => {
+                    goNext(index + 1);
+                }
+            });
+        }
+    });
+
+    // MAIN SLIDER CODE
+    function moveSlide(nextIndex, forwards) {
+        // Validate indices
+        if (nextIndex < 0 || nextIndex >= totalSlides) {
+            console.warn(`Slider: Invalid slide index ${nextIndex}`);
+            return;
+        }
+
+        let tl3 = gsap.timeline();
+        
+        // Safe dot line animations
+        let nextDotLine = childDots.eq(nextIndex).find(".slider_dot_line");
+        let activeDotLine = childDots.eq(activeIndex).find(".slider_dot_line");
+        
+        if (nextDotLine.length > 0) {
+            tl3.set(nextDotLine, { x: "0%" });
+        }
+        if (activeDotLine.length > 0) {
+            tl3.fromTo(activeDotLine, { x: "0%" }, { x: "100%" });
+        }
+
+        tl2.seek(`step${nextIndex}`);
+
+        let titleFrom = -100;
+        let titleDelay = "<";
+        if (forwards) {
+            titleFrom = 100;
+            titleDelay = "<50%";
+        }
+        
+        childItems.hide();
+        let prevItem = childItems.eq(activeIndex).css("display", "flex");
+        let nextItem = childItems.eq(nextIndex).css("display", "flex");
+        
+        // Check if items exist before animating
+        if (!prevItem.length || !nextItem.length) {
+            console.warn("Slider: Slide items not found");
+            return;
+        }
+        
+        let tl = gsap.timeline({ defaults: { duration: 1, ease: "power2.inOut" } });
+        
+        if (forwards) {
+            tl.fromTo(nextItem, { clipPath: "polygon(100% 0%, 100% 0%, 100% 100%, 100% 100%)" }, { clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, -30% 100%)" });
+            tl.fromTo(prevItem, { clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)" }, { clipPath: "polygon(0% 0%, 0% 0%, -30% 100%, 0% 100%)" }, "<");
+        } else {
+            tl.fromTo(nextItem, { clipPath: "polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%)" }, { clipPath: "polygon(0% 0%, 100% 0%, 130% 100%, 0% 100%)" });
+            tl.fromTo(prevItem, { clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)" }, { clipPath: "polygon(100% 0%, 100% 0%, 100% 100%, 130% 100%)" }, "<");
+        }
+        
+        // Safe title animation with element check
+        let titleWords = nextItem.find(".slider_cms_title .word");
+        if (titleWords.length > 0) {
+            tl.fromTo(titleWords, { yPercent: titleFrom }, { yPercent: 0, duration: 0.5, ease: "power1.inOut", stagger: { amount: 0.05 } }, titleDelay);
+        }
+
+        activeIndex = nextIndex;
+    }
+
+    // ARROWS
+    function goNext(num) {
+        let nextIndex = num;
+        if (nextIndex > totalSlides - 1) nextIndex = 0;
+        moveSlide(nextIndex, true);
+    }
+    
+    // go next
+    childArrow.filter(".is-next").on("click", function () {
+        goNext(activeIndex + 1);
+    });
+    
+    // go prev
+    childArrow.filter(".is-prev").on("click", function () {
+        let nextIndex = activeIndex - 1;
+        if (nextIndex < 0) nextIndex = totalSlides - 1;
+        moveSlide(nextIndex, false);
+    });
+
+    // CLICK OF DOTS
+    childDots.on("click", function () {
+        let dotIndex = $(this).index();
+        if (activeIndex > dotIndex) {
+            moveSlide(dotIndex, false);
+        } else if (activeIndex < dotIndex) {
+            moveSlide(dotIndex, true);
+        }
+    });
+});
+</script>
+
+<!-- Page scritps -->
+
 <script async src="https://live-cph.vercel.app/etageplan-listener.min.js"></script>
 <script>
 $(".scroll_horizontal_wrap").each(function (index) {
