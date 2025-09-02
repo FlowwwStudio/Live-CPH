@@ -65,8 +65,16 @@
                 modalContent.addEventListener('wheel', handleModalScroll, { passive: false });
                 
                 // Also try to enable scroll on the modal content directly
-                modalContent.style.overflowY = 'auto';
-                modalContent.style.maxHeight = '100vh';
+                modalContent.style.setProperty('overflow-y', 'auto', 'important');
+                modalContent.style.setProperty('max-height', '100vh', 'important');
+                
+                // Try to enable Lenis for modal content only
+                window.lenis.start();
+                setTimeout(() => {
+                  window.lenis.stop();
+                  // Add wheel event listener to modal for manual scroll
+                  modalContent.addEventListener('wheel', handleModalScroll, { passive: false });
+                }, 10);
                 console.log('🎯 Modal scroll enabled for:', modalContent.className);
               }, 10);
             } else {
@@ -115,8 +123,8 @@
       modalContents.forEach(modalContent => {
         modalContent.removeEventListener('wheel', handleModalScroll);
         // Reset modal styles
-        modalContent.style.overflowY = '';
-        modalContent.style.maxHeight = '';
+        modalContent.style.removeProperty('overflow-y');
+        modalContent.style.removeProperty('max-height');
       });
       
       // Check if Lenis is available
