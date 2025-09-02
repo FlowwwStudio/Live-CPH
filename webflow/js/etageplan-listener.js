@@ -63,6 +63,10 @@
                 window.lenis.stop();
                 // Add wheel event listener to modal for manual scroll
                 modalContent.addEventListener('wheel', handleModalScroll, { passive: false });
+                
+                // Also try to enable scroll on the modal content directly
+                modalContent.style.overflowY = 'auto';
+                modalContent.style.maxHeight = '100vh';
                 console.log('🎯 Modal scroll enabled for:', modalContent.className);
               }, 10);
             } else {
@@ -106,10 +110,13 @@
     
     // Function to enable scroll on body (works with Lenis)
     function enableScroll() {
-      // Remove modal scroll event listeners
+      // Remove modal scroll event listeners and reset styles
       const modalContents = document.querySelectorAll('.apartment_modal, .apartment_modal-content, .modal-content, [data-modal-content]');
       modalContents.forEach(modalContent => {
         modalContent.removeEventListener('wheel', handleModalScroll);
+        // Reset modal styles
+        modalContent.style.overflowY = '';
+        modalContent.style.maxHeight = '';
       });
       
       // Check if Lenis is available
