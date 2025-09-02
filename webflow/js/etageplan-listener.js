@@ -44,99 +44,20 @@
       }
     }
     
-     // Function to disable scroll on body (works with Lenis)
+     // Function to disable scroll on body
     function disableScroll() {
-      // Check if Lenis is available
-      if (window.lenis) {
-        window.lenis.stop();
-        // Allow scroll within modals by re-enabling Lenis for modal content
-        setTimeout(() => {
-          const openModal = document.querySelector('.apartment_modal-wrapper.is-open');
-          if (openModal) {
-            // Try multiple selectors to find the scrollable modal content
-            const modalContent = openModal.querySelector('.apartment_modal, .apartment_modal-content, .modal-content, [data-modal-content]');
-            if (modalContent) {
-              // Temporarily enable Lenis for modal content
-              window.lenis.start();
-              // Stop Lenis again but allow modal to scroll
-              setTimeout(() => {
-                window.lenis.stop();
-                // Add wheel event listener to modal for manual scroll
-                modalContent.addEventListener('wheel', handleModalScroll, { passive: false });
-                
-                // Also try to enable scroll on the modal content directly
-                modalContent.style.setProperty('overflow-y', 'auto', 'important');
-                modalContent.style.setProperty('max-height', '100vh', 'important');
-                
-                // Try to enable Lenis for modal content only
-                window.lenis.start();
-                setTimeout(() => {
-                  window.lenis.stop();
-                  // Add wheel event listener to modal for manual scroll
-                  modalContent.addEventListener('wheel', handleModalScroll, { passive: false });
-                }, 10);
-                console.log('🎯 Modal scroll enabled for:', modalContent.className);
-              }, 10);
-            } else {
-              console.warn('⚠️ No modal content found for scroll handling');
-            }
-          }
-        }, 50);
-        console.log('🚫 Lenis scroll disabled');
-      } else {
-        // Fallback for normal scroll
-        document.body.style.overflow = 'hidden';
-        document.body.style.paddingRight = getScrollbarWidth() + 'px';
-        console.log('🚫 Normal scroll disabled');
-      }
+      document.body.style.overflow = 'hidden';
+      document.body.style.paddingRight = getScrollbarWidth() + 'px';
+      console.log('🚫 Scroll disabled');
     }
     
-    // Function to handle scroll within modal
-    function handleModalScroll(e) {
-      const modalContent = e.currentTarget;
-      
-      // Check if the modal content is scrollable
-      if (modalContent.scrollHeight <= modalContent.clientHeight) {
-        // If not scrollable, prevent default to avoid body scroll
-        e.preventDefault();
-        return;
-      }
-      
-      const scrollTop = modalContent.scrollTop;
-      const scrollHeight = modalContent.scrollHeight;
-      const clientHeight = modalContent.clientHeight;
-      
-      // Check if we're at the top or bottom
-      if ((scrollTop <= 0 && e.deltaY < 0) || 
-          (scrollTop >= scrollHeight - clientHeight && e.deltaY > 0)) {
-        e.preventDefault();
-      }
-      
-      // If we're in the middle, allow the scroll
-      console.log('🎯 Modal scroll:', { scrollTop, scrollHeight, clientHeight, deltaY: e.deltaY });
-    }
+
     
-    // Function to enable scroll on body (works with Lenis)
+    // Function to enable scroll on body
     function enableScroll() {
-      // Remove modal scroll event listeners and reset styles
-      const modalContents = document.querySelectorAll('.apartment_modal, .apartment_modal-content, .modal-content, [data-modal-content]');
-      modalContents.forEach(modalContent => {
-        modalContent.removeEventListener('wheel', handleModalScroll);
-        // Reset modal styles
-        modalContent.style.removeProperty('overflow-y');
-        modalContent.style.removeProperty('max-height');
-      });
-      
-      // Check if Lenis is available
-      if (window.lenis) {
-        window.lenis.start();
-        console.log('✅ Lenis scroll enabled');
-      } else {
-        // Fallback for normal scroll
-        document.body.style.overflow = '';
-        document.body.style.paddingRight = '';
-        console.log('✅ Normal scroll enabled');
-      }
+      document.body.style.overflow = '';
+      document.body.style.paddingRight = '';
+      console.log('✅ Scroll enabled');
     }
     
     // Function to get scrollbar width to prevent layout shift
