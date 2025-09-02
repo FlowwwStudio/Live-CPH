@@ -109,9 +109,7 @@
     
     // Listen for messages from the SVG iframe
     window.addEventListener('message', function(event) {
-      console.log('📨 Received postMessage:', event.data);
-      
-      // Validate the message type
+      // Only log our apartment messages, ignore Cloudflare and other noise
       if (event.data && event.data.type === 'openApartment') {
         const apartmentId = event.data.apartmentId;
         console.log('📨 Received apartment ID from SVG:', apartmentId);
@@ -161,8 +159,12 @@
     
     // Close modal on Escape key
     document.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape') {
-        closeAllModals();
+      if (e.key === 'Escape' || e.keyCode === 27) {
+        const openModals = document.querySelectorAll('.apartment_modal-wrapper.is-open');
+        if (openModals.length > 0) {
+          closeAllModals();
+          console.log('🔒 ESC key pressed - closing modals');
+        }
       }
     });
     
