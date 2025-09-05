@@ -8,3 +8,17 @@ debug-*.js
 
 # Create new folder script
 create-new-folder.js
+
+webflow-asset-matcher.js
+webflow-asset-matcher-readme.md
+webflow-asset-matcher-results.json
+webflow-asset-matcher-test.js
+webflow-asset-matcher-test-results.json
+webflow-asset-matcher-test-results.json
+
+webflow-simple.js
+webflow-simple-readme.md
+webflow-simple-results.json
+webflow-simple-test.js
+webflow-simple-test-results.json
+webflow-simple-test-results.json

@@ -1,4 +1,3 @@
-
 $(".scroll_horizontal_wrap").each(function (index) {
   let wrap = $(this);
   let inner = $(this).find(".scroll_horizontal_inner");
@@ -62,10 +61,6 @@ $(".scroll_horizontal_wrap").each(function (index) {
   // section each loop end
 });
 
-
-
-// GSAP Slider with Tab Fix
-
   gsap.registerPlugin(Draggable, InertiaPlugin);
 
   function initBasicGSAPSlider() {
@@ -88,7 +83,7 @@ $(".scroll_horizontal_wrap").each(function (index) {
         slide.setAttribute('role','group');
         slide.setAttribute('aria-roledescription','Slide');
         slide.setAttribute('aria-label',`Slide ${i+1} of ${items.length}`);
-        slide.setAttribute('aria-hidden','true');
+   //   slide.setAttribute('aria-hidden','true');
         slide.setAttribute('aria-selected','false');
         slide.setAttribute('tabindex','-1');
       });
@@ -110,7 +105,7 @@ $(".scroll_horizontal_wrap").each(function (index) {
       if (isNaN(spvVar)) {
         spvVar = collection.clientWidth / slideW;
       }
-      const spv = Math.max(1, Math.min(spvVar, items.length));
+      const spv           = Math.max(1, Math.min(spvVar, items.length));
       const sliderEnabled = statusVar==='on' && spv < items.length;
       root.setAttribute('data-gsap-slider-status', sliderEnabled ? 'active' : 'not-active');
 
@@ -268,23 +263,22 @@ $(".scroll_horizontal_wrap").each(function (index) {
     tab.addEventListener('click', () => {
       setTimeout(() => {
         initBasicGSAPSlider();
-      }, 50); // slight delay for DOM render
-    });
-  });
-
-
-  document.querySelectorAll('.w-tab-link').forEach(tab => {
-    tab.addEventListener('click', () => {
-      setTimeout(() => {
-        document.querySelectorAll('[data-gsap-slider-init]').forEach(el => {
-          if (!el.classList.contains('gsap-slider-initialized')) {
-            window.gsapTabsSlider.init(el);
-          }
-        });
+        
+        // Also try to initialize gsapTabsSlider if available
+        if (window.gsapTabsSlider && typeof window.gsapTabsSlider.init === 'function') {
+          document.querySelectorAll('[data-gsap-slider-init]').forEach(el => {
+            if (!el.classList.contains('gsap-slider-initialized')) {
+              try {
+                window.gsapTabsSlider.init(el);
+              } catch (error) {
+                console.warn('gsapTabsSlider.init failed:', error);
+              }
+            }
+          });
+        }
       }, 300); // Wait for Webflow tab to become visible
     });
   });
-
 
 
 function initTabSystem() {
@@ -389,3 +383,374 @@ document.addEventListener('DOMContentLoaded', () => {
   initTabSystem();
 });
 
+
+(function() {
+  'use strict';
+  
+  function setFirstVisibleTabActive() {
+    try {
+      const tabContainer = document.querySelector('.floor_tabs');
+      if (!tabContainer) return;
+      
+      const tabLinks = tabContainer.querySelectorAll('._w-tab-link');
+      const tabPanes = tabContainer.querySelectorAll('.w-tab-pane');
+      
+      if (tabLinks.length === 0 || tabPanes.length === 0) return;
+      
+      // Find den første synlige tab-link
+      const firstVisibleTabLink = Array.from(tabLinks).find(link => 
+        !link.classList.contains('w-condition-invisible')
+      );
+      
+      if (!firstVisibleTabLink) return;
+      
+      const targetTabValue = firstVisibleTabLink.getAttribute('data-w-tab');
+      if (!targetTabValue) return;
+      
+      // Find den tilsvarende tab-pane
+      const targetTabPane = Array.from(tabPanes).find(pane => 
+        pane.getAttribute('data-w-tab') === targetTabValue
+      );
+      
+      if (!targetTabPane) return;
+      
+      // Tjek om den rigtige tab allerede er aktiv
+      if (firstVisibleTabLink.classList.contains('w--current') && 
+          targetTabPane.classList.contains('w--tab-active')) {
+        return;
+      }
+      
+      // Fjern aktive klasser
+      tabLinks.forEach(link => {
+        link.classList.remove('w--current');
+        link.setAttribute('aria-selected', 'false');
+        if (link !== firstVisibleTabLink) {
+          link.setAttribute('tabindex', '-1');
+        }
+      });
+      
+      tabPanes.forEach(pane => {
+        pane.classList.remove('w--tab-active');
+        pane.style.opacity = '';
+        pane.style.transition = '';
+      });
+      
+      // Tilføj aktive klasser
+      firstVisibleTabLink.classList.add('w--current');
+      firstVisibleTabLink.setAttribute('aria-selected', 'true');
+      firstVisibleTabLink.removeAttribute('tabindex');
+      
+      targetTabPane.classList.add('w--tab-active');
+      targetTabPane.style.opacity = '1';
+      targetTabPane.style.transition = 'all, opacity 300ms';
+      
+      // Opdater data-current
+      tabContainer.setAttribute('data-current', targetTabValue);
+      
+      // Registrer click events på alle synlige tabs for at sikre de virker
+      tabLinks.forEach(link => {
+        if (!link.classList.contains('w-condition-invisible')) {
+          // Fjern eksisterende event listeners først
+          link.removeEventListener('click', handleTabClick);
+          // Tilføj ny event listener
+          link.addEventListener('click', handleTabClick);
+        }
+      });
+      
+    } catch (error) {
+      console.warn('Tab visibility script error:', error);
+    }
+  }
+  
+  function handleTabClick(e) {
+    // Lad Webflow håndtere click'et naturligt
+    // Dette sikrer at Webflow's native funktionalitet ikke bliver brudt
+  }
+  
+  // Vent på at Webflow's scripts er loaded
+  function waitForWebflow() {
+    return new Promise((resolve) => {
+      // Tjek om Webflow object eksisterer
+      if (typeof window.Webflow !== 'undefined') {
+        resolve();
+        return;
+      }
+      
+      // Ellers vent indtil det er loaded
+      const checkInterval = setInterval(() => {
+        if (typeof window.Webflow !== 'undefined') {
+          clearInterval(checkInterval);
+          resolve();
+        }
+      }, 50);
+      
+      // Timeout efter 5 sekunder
+      setTimeout(() => {
+        clearInterval(checkInterval);
+        resolve();
+      }, 5000);
+    });
+  }
+  
+  async function initialize() {
+    // Vent på Webflow
+    await waitForWebflow();
+    
+    // Ekstra forsinkelse for at sikre alt er klart
+    setTimeout(() => {
+      setFirstVisibleTabActive();
+      
+      // Trigger Webflow's ready event hvis nødvendigt
+      if (window.Webflow && window.Webflow.ready) {
+        window.Webflow.ready();
+      }
+    }, 200);
+  }
+  
+  // Multiple event listeners for at sikre det kører
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initialize);
+  } else {
+    initialize();
+  }
+  
+  // Også når alt er loaded
+  window.addEventListener('load', () => {
+    setTimeout(initialize, 100);
+  });
+  
+})();
+
+// Synkronisering mellem controller-container og follower-container
+(function() {
+  'use strict';
+  
+  let isSyncing = false; // Forhindrer uendelige loops
+  
+  function syncContainers(sourceContainer, targetContainer) {
+    if (isSyncing) return;
+    isSyncing = true;
+    
+    try {
+      const sourceActiveTab = sourceContainer.querySelector('[data-floor="controller"].w--current, [data-floor="follower"].w--current');
+      if (!sourceActiveTab) {
+        isSyncing = false;
+        return;
+      }
+      
+      const sourceTabValue = sourceActiveTab.getAttribute('data-w-tab');
+      if (!sourceTabValue) {
+        isSyncing = false;
+        return;
+      }
+      
+      // Find tilsvarende tab i target container
+      const targetTab = targetContainer.querySelector(`[data-w-tab="${sourceTabValue}"]`);
+      if (!targetTab) {
+        isSyncing = false;
+        return;
+      }
+      
+      // Find tilsvarende tab-pane
+      const targetTabPane = document.querySelector(`[data-w-tab="${sourceTabValue}"].w-tab-pane`);
+      if (!targetTabPane) {
+        isSyncing = false;
+        return;
+      }
+      
+      // Tjek om target allerede er aktiv
+      if (targetTab.classList.contains('w--current') && targetTabPane.classList.contains('w--tab-active')) {
+        isSyncing = false;
+        return;
+      }
+      
+      // Fjern aktive klasser fra alle tabs i target container
+      const allTargetTabs = targetContainer.querySelectorAll('[data-floor="controller"], [data-floor="follower"]');
+      allTargetTabs.forEach(tab => {
+        tab.classList.remove('w--current');
+        tab.setAttribute('aria-selected', 'false');
+        tab.setAttribute('tabindex', '-1');
+      });
+      
+      // Fjern aktive klasser fra alle tab-panes
+      const allTabPanes = document.querySelectorAll('.w-tab-pane');
+      allTabPanes.forEach(pane => {
+        pane.classList.remove('w--tab-active');
+        pane.style.opacity = '';
+        pane.style.transition = '';
+      });
+      
+      // Tilføj aktive klasser til target
+      targetTab.classList.add('w--current');
+      targetTab.setAttribute('aria-selected', 'true');
+      targetTab.removeAttribute('tabindex');
+      
+      targetTabPane.classList.add('w--tab-active');
+      targetTabPane.style.opacity = '1';
+      targetTabPane.style.transition = 'all, opacity 300ms';
+      
+      // Opdater data-current på target container
+      targetContainer.setAttribute('data-current', sourceTabValue);
+      
+    } catch (error) {
+      console.warn('Container sync error:', error);
+    } finally {
+      isSyncing = false;
+    }
+  }
+  
+  function setFirstVisibleTabActiveForContainer(container) {
+    try {
+      if (!container) return;
+      
+      const tabLinks = container.querySelectorAll('[data-floor="controller"], [data-floor="follower"]');
+      const tabPanes = document.querySelectorAll('.w-tab-pane');
+      
+      if (tabLinks.length === 0 || tabPanes.length === 0) return;
+      
+      // Find den første synlige tab-link
+      const firstVisibleTabLink = Array.from(tabLinks).find(link => 
+        !link.classList.contains('w-condition-invisible')
+      );
+      
+      if (!firstVisibleTabLink) return;
+      
+      const targetTabValue = firstVisibleTabLink.getAttribute('data-w-tab');
+      if (!targetTabValue) return;
+      
+      // Find den tilsvarende tab-pane
+      const targetTabPane = Array.from(tabPanes).find(pane => 
+        pane.getAttribute('data-w-tab') === targetTabValue
+      );
+      
+      if (!targetTabPane) return;
+      
+      // Tjek om den rigtige tab allerede er aktiv
+      if (firstVisibleTabLink.classList.contains('w--current') && 
+          targetTabPane.classList.contains('w--tab-active')) {
+        return;
+      }
+      
+      // Fjern aktive klasser
+      tabLinks.forEach(link => {
+        link.classList.remove('w--current');
+        link.setAttribute('aria-selected', 'false');
+        if (link !== firstVisibleTabLink) {
+          link.setAttribute('tabindex', '-1');
+        }
+      });
+      
+      tabPanes.forEach(pane => {
+        pane.classList.remove('w--tab-active');
+        pane.style.opacity = '';
+        pane.style.transition = '';
+      });
+      
+      // Tilføj aktive klasser
+      firstVisibleTabLink.classList.add('w--current');
+      firstVisibleTabLink.setAttribute('aria-selected', 'true');
+      firstVisibleTabLink.removeAttribute('tabindex');
+      
+      targetTabPane.classList.add('w--tab-active');
+      targetTabPane.style.opacity = '1';
+      targetTabPane.style.transition = 'all, opacity 300ms';
+      
+      // Opdater data-current
+      container.setAttribute('data-current', targetTabValue);
+      
+    } catch (error) {
+      console.warn('Set first visible tab error:', error);
+    }
+  }
+  
+  function initializeContainerSync() {
+    const controllerContainer = document.querySelector('[data-floor="controller-container"]');
+    const followerContainer = document.querySelector('[data-floor="follower-container"]');
+    
+    if (!controllerContainer || !followerContainer) return;
+    
+    // Sæt første synlige tab aktiv for begge containers
+    setFirstVisibleTabActiveForContainer(controllerContainer);
+    setFirstVisibleTabActiveForContainer(followerContainer);
+    
+    // Synkroniser begge containers til at matche hinanden
+    const controllerActiveTab = controllerContainer.querySelector('[data-floor="controller"].w--current');
+    const followerActiveTab = followerContainer.querySelector('[data-floor="follower"].w--current');
+    
+    if (controllerActiveTab && followerActiveTab) {
+      const controllerTabValue = controllerActiveTab.getAttribute('data-w-tab');
+      const followerTabValue = followerActiveTab.getAttribute('data-w-tab');
+      
+      // Hvis de ikke matcher, synkroniser til controller
+      if (controllerTabValue !== followerTabValue) {
+        syncContainers(controllerContainer, followerContainer);
+      }
+    }
+    
+    // Tilføj event listeners til controller container
+    const controllerTabs = controllerContainer.querySelectorAll('[data-floor="controller"]');
+    controllerTabs.forEach(tab => {
+      tab.addEventListener('click', (e) => {
+        setTimeout(() => {
+          syncContainers(controllerContainer, followerContainer);
+        }, 100); // Kort forsinkelse for at lade Webflow håndtere click'et først
+      });
+    });
+    
+    // Tilføj event listeners til follower container
+    const followerTabs = followerContainer.querySelectorAll('[data-floor="follower"]');
+    followerTabs.forEach(tab => {
+      tab.addEventListener('click', (e) => {
+        setTimeout(() => {
+          syncContainers(followerContainer, controllerContainer);
+        }, 100); // Kort forsinkelse for at lade Webflow håndtere click'et først
+      });
+    });
+  }
+  
+  // Vent på at Webflow's scripts er loaded
+  function waitForWebflow() {
+    return new Promise((resolve) => {
+      if (typeof window.Webflow !== 'undefined') {
+        resolve();
+        return;
+      }
+      
+      const checkInterval = setInterval(() => {
+        if (typeof window.Webflow !== 'undefined') {
+          clearInterval(checkInterval);
+          resolve();
+        }
+      }, 50);
+      
+      setTimeout(() => {
+        clearInterval(checkInterval);
+        resolve();
+      }, 5000);
+    });
+  }
+  
+  async function initialize() {
+    await waitForWebflow();
+    
+    setTimeout(() => {
+      initializeContainerSync();
+      
+      if (window.Webflow && window.Webflow.ready) {
+        window.Webflow.ready();
+      }
+    }, 200);
+  }
+  
+  // Multiple event listeners for at sikre det kører
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initialize);
+  } else {
+    initialize();
+  }
+  
+  window.addEventListener('load', () => {
+    setTimeout(initialize, 100);
+  });
+  
+})();

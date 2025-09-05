@@ -84,11 +84,13 @@ export default function SVGViewer({ property, floor }) {
         cursor: pointer !important;
         transition: opacity 0.3s ease !important;
         opacity: 0 !important;
+        fill-opacity: 0 !important;
       }
       
       /* apartments hover effect - higher specificity to beat SVG internal CSS */
       svg [id^="VES-"]:hover, svg [id^="STR-"]:hover, svg [id^="HER-"]:hover, svg [id^="DOR-"]:hover, svg [id^="NFA-"]:hover {
         opacity: 0.5 !important; /* This should now work */
+        fill-opacity: 1 !important;
       }
       
       /* General styling for interactive elements */

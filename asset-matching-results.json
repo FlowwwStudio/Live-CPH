@@ -1,0 +1,1139 @@
+{
+  "processed": 188,
+  "matched": 188,
+  "unmatched": 0,
+  "errors": 0,
+  "unmatchedAssets": [],
+  "matchedAssets": [
+    {
+      "filename": "HER_Lejlighed_4_18.svg",
+      "apartmentId": "HER-4-18",
+      "apartmentName": "Hermodsgade, 4. sal, lejlighed 18",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1acc77bd8cf3ccd7d5767_Lejlighed_4_18.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_4_17.svg",
+      "apartmentId": "HER-4-17",
+      "apartmentName": "Hermodsgade, 4. sal, lejlighed 17",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1acc7f9bef38dccbd2091_Lejlighed_4_17.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_4_13.svg",
+      "apartmentId": "HER-4-13",
+      "apartmentName": "Hermodsgade, 4. sal, lejlighed 13",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1acc79342612335515c33_Lejlighed_4_13.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_4_15.svg",
+      "apartmentId": "HER-4-15",
+      "apartmentName": "Hermodsgade, 4. sal, lejlighed 15",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1acc7f1258ded5f6b9dbe_Lejlighed_4_15.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_4_14.svg",
+      "apartmentId": "HER-4-14",
+      "apartmentName": "Hermodsgade, 4. sal, lejlighed 14",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1acc7cc5e68090a124922_Lejlighed_4_14.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_4_16.svg",
+      "apartmentId": "HER-4-16",
+      "apartmentName": "Hermodsgade, 4. sal, lejlighed 16",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1acc7f229ddb62e798262_Lejlighed_4_16.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_4_12.svg",
+      "apartmentId": "HER-4-12",
+      "apartmentName": "Hermodsgade, 4. sal, lejlighed 12",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1acc65b9199da8ddbbf13_Lejlighed_4_12.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_4_07.svg",
+      "apartmentId": "HER-4-07",
+      "apartmentName": "Hermodsgade, 4. sal, lejlighed 07",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1acc54f5ec5da4594bc58_Lejlighed_4_07.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_4_11.svg",
+      "apartmentId": "HER-4-11",
+      "apartmentName": "Hermodsgade, 4. sal, lejlighed 11",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1acc53c666c7b5b74e204_Lejlighed_4_11.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_4_06.svg",
+      "apartmentId": "HER-4-06",
+      "apartmentName": "Hermodsgade, 4. sal, lejlighed 06",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1acc5a5559cf17a99f18c_Lejlighed_4_06.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_4_10.svg",
+      "apartmentId": "HER-4-10",
+      "apartmentName": "Hermodsgade, 4. sal, lejlighed 10",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1acc5476c52c96eb64d61_Lejlighed_4_10.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_4_04.svg",
+      "apartmentId": "HER-4-04",
+      "apartmentName": "Hermodsgade, 4. sal, lejlighed 04",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1acc441a014f6037c1a83_Lejlighed_4_04.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_4_09.svg",
+      "apartmentId": "HER-4-09",
+      "apartmentName": "Hermodsgade, 4. sal, lejlighed 09",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1acc40b2c52d8bf8a6d85_Lejlighed_4_09.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_4_05.svg",
+      "apartmentId": "HER-4-05",
+      "apartmentName": "Hermodsgade, 4. sal, lejlighed 05",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1acc4cc5e68090a1248dc_Lejlighed_4_05.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_4_03.svg",
+      "apartmentId": "HER-4-03",
+      "apartmentName": "Hermodsgade, 4. sal, lejlighed 03",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1acc455d837e65c73d773_Lejlighed_4_03.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_4_08.svg",
+      "apartmentId": "HER-4-08",
+      "apartmentName": "Hermodsgade, 4. sal, lejlighed 08",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1acc440f17d7c4a781919_Lejlighed_4_08.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_4_02.svg",
+      "apartmentId": "HER-4-02",
+      "apartmentName": "Hermodsgade, 4. sal, lejlighed 02",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1acc4182abcf13eeff7a6_Lejlighed_4_02.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_4_01.svg",
+      "apartmentId": "HER-4-01",
+      "apartmentName": "Hermodsgade, 4. sal, lejlighed 01",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1acc47128cc7bc8f8d581_Lejlighed_4_01.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_3_44.svg",
+      "apartmentId": "HER-3-44",
+      "apartmentName": "Hermodsgade, 3. sal, lejlighed 44",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1abf81999f7190fb49b73_Lejlighed_3_44.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_3_43.svg",
+      "apartmentId": "HER-3-43",
+      "apartmentName": "Hermodsgade, 3. sal, lejlighed 43",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1abf8e2feefbbb182640d_Lejlighed_3_43.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_3_42.svg",
+      "apartmentId": "HER-3-42",
+      "apartmentName": "Hermodsgade, 3. sal, lejlighed 42",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1abf66ba115d76c0129ce_Lejlighed_3_42.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_3_40.svg",
+      "apartmentId": "HER-3-40",
+      "apartmentName": "Hermodsgade, 3. sal, lejlighed 40",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1abf6fd9961d302b4d559_Lejlighed_3_40.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_3_34.svg",
+      "apartmentId": "HER-3-34",
+      "apartmentName": "Hermodsgade, 3. sal, lejlighed 34",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1abf5e9195c83b1b6ab29_Lejlighed_3_34.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_3_39.svg",
+      "apartmentId": "HER-3-39",
+      "apartmentName": "Hermodsgade, 3. sal, lejlighed 39",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1abf5d6e8f5cf30b8ef5d_Lejlighed_3_39.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_3_38.svg",
+      "apartmentId": "HER-3-38",
+      "apartmentName": "Hermodsgade, 3. sal, lejlighed 38",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1abf5b39d5e21fd855717_Lejlighed_3_38.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_3_33.svg",
+      "apartmentId": "HER-3-33",
+      "apartmentName": "Hermodsgade, 3. sal, lejlighed 33",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1abf5498e3e1dd6d8f5c9_Lejlighed_3_33.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_3_36.svg",
+      "apartmentId": "HER-3-36",
+      "apartmentName": "Hermodsgade, 3. sal, lejlighed 36",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1abf5d10383d9c36261fc_Lejlighed_3_36.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_3_41.svg",
+      "apartmentId": "HER-3-41",
+      "apartmentName": "Hermodsgade, 3. sal, lejlighed 41",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1abf57b1a683b3dfc4803_Lejlighed_3_41.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_3_37.svg",
+      "apartmentId": "HER-3-37",
+      "apartmentName": "Hermodsgade, 3. sal, lejlighed 37",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1abf5d0859a06fb40ab8f_Lejlighed_3_37.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_3_35.svg",
+      "apartmentId": "HER-3-35",
+      "apartmentName": "Hermodsgade, 3. sal, lejlighed 35",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1abf5d941651eaa9b9166_Lejlighed_3_35.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_3_31.svg",
+      "apartmentId": "HER-3-31",
+      "apartmentName": "Hermodsgade, 3. sal, lejlighed 31",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1abf13420328e5b67109f_Lejlighed_3_31.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_3_32.svg",
+      "apartmentId": "HER-3-32",
+      "apartmentName": "Hermodsgade, 3. sal, lejlighed 32",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1abf1f391d1cf45bfa7d0_Lejlighed_3_32.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_3_26.svg",
+      "apartmentId": "HER-3-26",
+      "apartmentName": "Hermodsgade, 3. sal, lejlighed 26",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1abf02897a262d40d0e01_Lejlighed_3_26.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_3_28.svg",
+      "apartmentId": "HER-3-28",
+      "apartmentName": "Hermodsgade, 3. sal, lejlighed 28",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1abf0d6e8f5cf30b8ee62_Lejlighed_3_28.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_3_23.svg",
+      "apartmentId": "HER-3-23",
+      "apartmentName": "Hermodsgade, 3. sal, lejlighed 23",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1abf046014e73f4ba98ba_Lejlighed_3_23.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_3_27.svg",
+      "apartmentId": "HER-3-27",
+      "apartmentName": "Hermodsgade, 3. sal, lejlighed 27",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1abf08c2fadc458e13d16_Lejlighed_3_27.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_3_30.svg",
+      "apartmentId": "HER-3-30",
+      "apartmentName": "Hermodsgade, 3. sal, lejlighed 30",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1abf08c91cebc1434194d_Lejlighed_3_30.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_3_24.svg",
+      "apartmentId": "HER-3-24",
+      "apartmentName": "Hermodsgade, 3. sal, lejlighed 24",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1abf06cabcf40b4f4158b_Lejlighed_3_24.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_3_25.svg",
+      "apartmentId": "HER-3-25",
+      "apartmentName": "Hermodsgade, 3. sal, lejlighed 25",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1abf0f459d3e32a71f2f4_Lejlighed_3_25.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_3_29.svg",
+      "apartmentId": "HER-3-29",
+      "apartmentName": "Hermodsgade, 3. sal, lejlighed 29",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1abf03fc7ae42e296a466_Lejlighed_3_29.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_3_22.svg",
+      "apartmentId": "HER-3-22",
+      "apartmentName": "Hermodsgade, 3. sal, lejlighed 22",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1abee3baccaf0b0b3427b_Lejlighed_3_22.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_3_21.svg",
+      "apartmentId": "HER-3-21",
+      "apartmentName": "Hermodsgade, 3. sal, lejlighed 21",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1abee7aae8a1c4f32ffa3_Lejlighed_3_21.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_3_20.svg",
+      "apartmentId": "HER-3-20",
+      "apartmentName": "Hermodsgade, 3. sal, lejlighed 20",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1abed724de111403854e9_Lejlighed_3_20.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_3_18.svg",
+      "apartmentId": "HER-3-18",
+      "apartmentName": "Hermodsgade, 3. sal, lejlighed 18",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1abed8c91cebc1434186e_Lejlighed_3_18.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_3_19.svg",
+      "apartmentId": "HER-3-19",
+      "apartmentName": "Hermodsgade, 3. sal, lejlighed 19",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1abedfc1a681957eb3514_Lejlighed_3_19.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_3_17.svg",
+      "apartmentId": "HER-3-17",
+      "apartmentName": "Hermodsgade, 3. sal, lejlighed 17",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1abed41a014f6037bc7b8_Lejlighed_3_17.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_3_14.svg",
+      "apartmentId": "HER-3-14",
+      "apartmentName": "Hermodsgade, 3. sal, lejlighed 14",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1abeb0b70c41b2c2d65ee_Lejlighed_3_14.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_3_13.svg",
+      "apartmentId": "HER-3-13",
+      "apartmentName": "Hermodsgade, 3. sal, lejlighed 13",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1abeb1fdc9b320ae11d8f_Lejlighed_3_13.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_3_15.svg",
+      "apartmentId": "HER-3-15",
+      "apartmentName": "Hermodsgade, 3. sal, lejlighed 15",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1abebedc7e5ce6037d032_Lejlighed_3_15.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_3_16.svg",
+      "apartmentId": "HER-3-16",
+      "apartmentName": "Hermodsgade, 3. sal, lejlighed 16",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1abeb2bb44fae4a404dbf_Lejlighed_3_16.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_3_11.svg",
+      "apartmentId": "HER-3-11",
+      "apartmentName": "Hermodsgade, 3. sal, lejlighed 11",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1abbc1aede669048eb52f_Lejlighed_3_11.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_3_12.svg",
+      "apartmentId": "HER-3-12",
+      "apartmentName": "Hermodsgade, 3. sal, lejlighed 12",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1abbc3fc7ae42e2968b3a_Lejlighed_3_12.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_3_03.svg",
+      "apartmentId": "HER-3-03",
+      "apartmentName": "Hermodsgade, 3. sal, lejlighed 03",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1abbb3cff5ac471dc8780_Lejlighed_3_03.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_3_09.svg",
+      "apartmentId": "HER-3-09",
+      "apartmentName": "Hermodsgade, 3. sal, lejlighed 09",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1abbb56e9147ffcc0d53f_Lejlighed_3_09.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_3_05.svg",
+      "apartmentId": "HER-3-05",
+      "apartmentName": "Hermodsgade, 3. sal, lejlighed 05",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1abbafd9961d302b4ac5c_Lejlighed_3_05.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_3_02.svg",
+      "apartmentId": "HER-3-02",
+      "apartmentName": "Hermodsgade, 3. sal, lejlighed 02",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1abba3850a8f057d478f3_Lejlighed_3_02.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_3_01.svg",
+      "apartmentId": "HER-3-01",
+      "apartmentName": "Hermodsgade, 3. sal, lejlighed 01",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1abbadb1c669da514886e_Lejlighed_3_01.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_3_08.svg",
+      "apartmentId": "HER-3-08",
+      "apartmentName": "Hermodsgade, 3. sal, lejlighed 08",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1abba0423cf918acb4f41_Lejlighed_3_08.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_3_10.svg",
+      "apartmentId": "HER-3-10",
+      "apartmentName": "Hermodsgade, 3. sal, lejlighed 10",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1abba106b70bdf2db0053_Lejlighed_3_10.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_3_06.svg",
+      "apartmentId": "HER-3-06",
+      "apartmentName": "Hermodsgade, 3. sal, lejlighed 06",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1abbad6e8f5cf30b8dfba_Lejlighed_3_06.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_3_45.svg",
+      "apartmentId": "HER-3-45",
+      "apartmentName": "Hermodsgade, 3. sal, lejlighed 45",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1abb9761c5c900fce93ed_Lejlighed_3_04.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_3_07.svg",
+      "apartmentId": "HER-3-07",
+      "apartmentName": "Hermodsgade, 3. sal, lejlighed 07",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1abb9106b70bdf2daffd7_Lejlighed_3_07.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_2_45.svg",
+      "apartmentId": "HER-2-45",
+      "apartmentName": "Hermodsgade, 2. sal, lejlighed 45",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1abad9786316fea89a408_Lejlighed_2_45.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_2_41.svg",
+      "apartmentId": "HER-2-41",
+      "apartmentName": "Hermodsgade, 2. sal, lejlighed 41",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1abaa7b8cb942697be9f3_Lejlighed_2_41.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_2_44.svg",
+      "apartmentId": "HER-2-44",
+      "apartmentName": "Hermodsgade, 2. sal, lejlighed 44",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1abaa468fdb830e1dc13a_Lejlighed_2_44.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_2_43.svg",
+      "apartmentId": "HER-2-43",
+      "apartmentName": "Hermodsgade, 2. sal, lejlighed 43",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1abaaab8aa76a6eaef404_Lejlighed_2_43.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_2_42.svg",
+      "apartmentId": "HER-2-42",
+      "apartmentName": "Hermodsgade, 2. sal, lejlighed 42",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1abaaf50004b9608e07e1_Lejlighed_2_42.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_2_40.svg",
+      "apartmentId": "HER-2-40",
+      "apartmentName": "Hermodsgade, 2. sal, lejlighed 40",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1aba9aa52de3afe523d65_Lejlighed_2_40.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_2_39.svg",
+      "apartmentId": "HER-2-39",
+      "apartmentName": "Hermodsgade, 2. sal, lejlighed 39",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1aba9fb22248fc9939f27_Lejlighed_2_39.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_2_36.svg",
+      "apartmentId": "HER-2-36",
+      "apartmentName": "Hermodsgade, 2. sal, lejlighed 36",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1aba978c6137133d52ea7_Lejlighed_2_36.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_2_37.svg",
+      "apartmentId": "HER-2-37",
+      "apartmentName": "Hermodsgade, 2. sal, lejlighed 37",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1aba93850a8f057d46e49_Lejlighed_2_37.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_2_38.svg",
+      "apartmentId": "HER-2-38",
+      "apartmentName": "Hermodsgade, 2. sal, lejlighed 38",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1aba9fc1a681957eb1b51_Lejlighed_2_38.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_2_35.svg",
+      "apartmentId": "HER-2-35",
+      "apartmentName": "Hermodsgade, 2. sal, lejlighed 35",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1aba97128cc7bc8f84b38_Lejlighed_2_35.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_2_31.svg",
+      "apartmentId": "HER-2-31",
+      "apartmentName": "Hermodsgade, 2. sal, lejlighed 31",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1aba772f8aefc9272011a_Lejlighed_2_31.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_2_34.svg",
+      "apartmentId": "HER-2-34",
+      "apartmentName": "Hermodsgade, 2. sal, lejlighed 34",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1aba76eb7e64763af8457_Lejlighed_2_34.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_2_32.svg",
+      "apartmentId": "HER-2-32",
+      "apartmentName": "Hermodsgade, 2. sal, lejlighed 32",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1aba73390cbbbe99efeee_Lejlighed_2_32.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_2_33.svg",
+      "apartmentId": "HER-2-33",
+      "apartmentName": "Hermodsgade, 2. sal, lejlighed 33",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1aba7f391d1cf45bf94e1_Lejlighed_2_33.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_2_27.svg",
+      "apartmentId": "HER-2-27",
+      "apartmentName": "Hermodsgade, 2. sal, lejlighed 27",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1aba63390cbbbe99efeac_Lejlighed_2_27.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_2_25.svg",
+      "apartmentId": "HER-2-25",
+      "apartmentName": "Hermodsgade, 2. sal, lejlighed 25",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1aba6f97937b3378b3bac_Lejlighed_2_25.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_2_28.svg",
+      "apartmentId": "HER-2-28",
+      "apartmentName": "Hermodsgade, 2. sal, lejlighed 28",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1aba6a1e557dca9c648fe_Lejlighed_2_28.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_2_30.svg",
+      "apartmentId": "HER-2-30",
+      "apartmentName": "Hermodsgade, 2. sal, lejlighed 30",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1aba638788b0c7975219a_Lejlighed_2_30.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_2_26.svg",
+      "apartmentId": "HER-2-26",
+      "apartmentName": "Hermodsgade, 2. sal, lejlighed 26",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1aba6148aa1481277ceb9_Lejlighed_2_26.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_2_29.svg",
+      "apartmentId": "HER-2-29",
+      "apartmentName": "Hermodsgade, 2. sal, lejlighed 29",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1aba6c6f48f21f7d84b0e_Lejlighed_2_29.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_2_24.svg",
+      "apartmentId": "HER-2-24",
+      "apartmentName": "Hermodsgade, 2. sal, lejlighed 24",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1aba52a0ebbd066e2a388_Lejlighed_2_24.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_2_23.svg",
+      "apartmentId": "HER-2-23",
+      "apartmentName": "Hermodsgade, 2. sal, lejlighed 23",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1aba59984678d1bdf69e9_Lejlighed_2_23.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_2_22.svg",
+      "apartmentId": "HER-2-22",
+      "apartmentName": "Hermodsgade, 2. sal, lejlighed 22",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1aba561106fce81220e88_Lejlighed_2_22.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_2_21.svg",
+      "apartmentId": "HER-2-21",
+      "apartmentName": "Hermodsgade, 2. sal, lejlighed 21",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1aba5aa52de3afe523c26_Lejlighed_2_21.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_2_19.svg",
+      "apartmentId": "HER-2-19",
+      "apartmentName": "Hermodsgade, 2. sal, lejlighed 19",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1aba3c900e08a1ba4f95b_Lejlighed_2_19.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_2_20.svg",
+      "apartmentId": "HER-2-20",
+      "apartmentName": "Hermodsgade, 2. sal, lejlighed 20",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1aba27f484a93e70c453f_Lejlighed_2_20.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_2_17.svg",
+      "apartmentId": "HER-2-17",
+      "apartmentName": "Hermodsgade, 2. sal, lejlighed 17",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1aba27b8cb942697be65c_Lejlighed_2_17.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_2_16.svg",
+      "apartmentId": "HER-2-16",
+      "apartmentName": "Hermodsgade, 2. sal, lejlighed 16",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1aba24e8ddcec0d574391_Lejlighed_2_16.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_2_15.svg",
+      "apartmentId": "HER-2-15",
+      "apartmentName": "Hermodsgade, 2. sal, lejlighed 15",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1aba2eb2d8701488015c3_Lejlighed_2_15.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_2_18.svg",
+      "apartmentId": "HER-2-18",
+      "apartmentName": "Hermodsgade, 2. sal, lejlighed 18",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1aba29984678d1bdf693f_Lejlighed_2_18.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_2_12.svg",
+      "apartmentId": "HER-2-12",
+      "apartmentName": "Hermodsgade, 2. sal, lejlighed 12",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1aba23881c2785c2fa95c_Lejlighed_2_12.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_2_13.svg",
+      "apartmentId": "HER-2-13",
+      "apartmentName": "Hermodsgade, 2. sal, lejlighed 13",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1aba21b39a437d838937f_Lejlighed_2_13.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_2_14.svg",
+      "apartmentId": "HER-2-14",
+      "apartmentName": "Hermodsgade, 2. sal, lejlighed 14",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1aba2c900e08a1ba4f8ba_Lejlighed_2_14.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_2_11.svg",
+      "apartmentId": "HER-2-11",
+      "apartmentName": "Hermodsgade, 2. sal, lejlighed 11",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1aba24367c8a95f6a5363_Lejlighed_2_11.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_2_02.svg",
+      "apartmentId": "HER-2-02",
+      "apartmentName": "Hermodsgade, 2. sal, lejlighed 02",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1aba020e2a4e2e51062d9_Lejlighed_2_02.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_2_09.svg",
+      "apartmentId": "HER-2-09",
+      "apartmentName": "Hermodsgade, 2. sal, lejlighed 09",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1aba0db1c669da5147f4e_Lejlighed_2_09.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_2_08.svg",
+      "apartmentId": "HER-2-08",
+      "apartmentName": "Hermodsgade, 2. sal, lejlighed 08",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1aba03850a8f057d46b7d_Lejlighed_2_08.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_2_06.svg",
+      "apartmentId": "HER-2-06",
+      "apartmentName": "Hermodsgade, 2. sal, lejlighed 06",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1aba02fb1daa3861ddaf3_Lejlighed_2_06.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_2_10.svg",
+      "apartmentId": "HER-2-10",
+      "apartmentName": "Hermodsgade, 2. sal, lejlighed 10",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1aba0c7890471b60fda55_Lejlighed_2_10.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_2_05.svg",
+      "apartmentId": "HER-2-05",
+      "apartmentName": "Hermodsgade, 2. sal, lejlighed 05",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1aba0bae9c37e6face252_Lejlighed_2_05.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_2_01.svg",
+      "apartmentId": "HER-2-01",
+      "apartmentName": "Hermodsgade, 2. sal, lejlighed 01",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1ab9ff8898e0d1637904f_Lejlighed_2_01.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_2_03.svg",
+      "apartmentId": "HER-2-03",
+      "apartmentName": "Hermodsgade, 2. sal, lejlighed 03",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1ab9fc1ffc7c953a84f22_Lejlighed_2_03.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_2_07.svg",
+      "apartmentId": "HER-2-07",
+      "apartmentName": "Hermodsgade, 2. sal, lejlighed 07",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1ab9faf8b125e6244c30c_Lejlighed_2_07.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_2_04.svg",
+      "apartmentId": "HER-2-04",
+      "apartmentName": "Hermodsgade, 2. sal, lejlighed 04",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1ab9f2a0ebbd066e2a1fd_Lejlighed_2_04.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_1_42.svg",
+      "apartmentId": "HER-1-42",
+      "apartmentName": "Hermodsgade, 1. sal, lejlighed 42",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1ab88ace2893b74399f13_Lejlighed_1_42.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_1_41.svg",
+      "apartmentId": "HER-1-41",
+      "apartmentName": "Hermodsgade, 1. sal, lejlighed 41",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1ab8861106fce812205a5_Lejlighed_1_41.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_1_43.svg",
+      "apartmentId": "HER-1-43",
+      "apartmentName": "Hermodsgade, 1. sal, lejlighed 43",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1ab88837033943e1cafda_Lejlighed_1_43.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_1_36.svg",
+      "apartmentId": "HER-1-36",
+      "apartmentName": "Hermodsgade, 1. sal, lejlighed 36",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1ab86ffba69c73a0555ea_Lejlighed_1_36.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_1_37.svg",
+      "apartmentId": "HER-1-37",
+      "apartmentName": "Hermodsgade, 1. sal, lejlighed 37",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1ab86766da4d79e29ecd6_Lejlighed_1_37.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_1_38.svg",
+      "apartmentId": "HER-1-38",
+      "apartmentName": "Hermodsgade, 1. sal, lejlighed 38",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1ab86418aa622b68c5d23_Lejlighed_1_38.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_1_39.svg",
+      "apartmentId": "HER-1-39",
+      "apartmentName": "Hermodsgade, 1. sal, lejlighed 39",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1ab86ff1f76434234a627_Lejlighed_1_39.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_1_40.svg",
+      "apartmentId": "HER-1-40",
+      "apartmentName": "Hermodsgade, 1. sal, lejlighed 40",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1ab86c6e6908007e884db_Lejlighed_1_40.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_1_32.svg",
+      "apartmentId": "HER-1-32",
+      "apartmentName": "Hermodsgade, 1. sal, lejlighed 32",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1ab840c2155fc10420dd5_Lejlighed_1_32.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_1_35.svg",
+      "apartmentId": "HER-1-35",
+      "apartmentName": "Hermodsgade, 1. sal, lejlighed 35",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1ab84a1e557dca9c63d14_Lejlighed_1_35.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_1_34.svg",
+      "apartmentId": "HER-1-34",
+      "apartmentName": "Hermodsgade, 1. sal, lejlighed 34",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1ab842e5217f5f3aed46f_Lejlighed_1_34.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_1_33.svg",
+      "apartmentId": "HER-1-33",
+      "apartmentName": "Hermodsgade, 1. sal, lejlighed 33",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1ab8457611df95ff17b23_Lejlighed_1_33.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_1_31.svg",
+      "apartmentId": "HER-1-31",
+      "apartmentName": "Hermodsgade, 1. sal, lejlighed 31",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1ab84761c5c900fce7309_Lejlighed_1_31.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_1_29.svg",
+      "apartmentId": "HER-1-29",
+      "apartmentName": "Hermodsgade, 1. sal, lejlighed 29",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1ab833c666c7b5b74587a_Lejlighed_1_29.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_1_27.svg",
+      "apartmentId": "HER-1-27",
+      "apartmentName": "Hermodsgade, 1. sal, lejlighed 27",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1ab831fdc9b320ae0fbf6_Lejlighed_1_27.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_1_30.svg",
+      "apartmentId": "HER-1-30",
+      "apartmentName": "Hermodsgade, 1. sal, lejlighed 30",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1ab83106b70bdf2daee45_Lejlighed_1_30.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_1_26.svg",
+      "apartmentId": "HER-1-26",
+      "apartmentName": "Hermodsgade, 1. sal, lejlighed 26",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1ab83f229ddb62e78fed4_Lejlighed_1_26.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_1_28.svg",
+      "apartmentId": "HER-1-28",
+      "apartmentName": "Hermodsgade, 1. sal, lejlighed 28",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1ab836bd90f40ecec08b1_Lejlighed_1_28.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_1_24.svg",
+      "apartmentId": "HER-1-24",
+      "apartmentName": "Hermodsgade, 1. sal, lejlighed 24",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1ab81766da4d79e29eb7d_Lejlighed_1_24.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_1_25.svg",
+      "apartmentId": "HER-1-25",
+      "apartmentName": "Hermodsgade, 1. sal, lejlighed 25",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1ab81acf53f13179bc170_Lejlighed_1_25.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_1_23.svg",
+      "apartmentId": "HER-1-23",
+      "apartmentName": "Hermodsgade, 1. sal, lejlighed 23",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1ab816a8cb1b671811646_Lejlighed_1_23.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_1_22.svg",
+      "apartmentId": "HER-1-22",
+      "apartmentName": "Hermodsgade, 1. sal, lejlighed 22",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1ab80c9ebd6776621dff5_Lejlighed_1_22.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_1_21.svg",
+      "apartmentId": "HER-1-21",
+      "apartmentName": "Hermodsgade, 1. sal, lejlighed 21",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1ab80b5afefccb446964a_Lejlighed_1_21.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_1_18.svg",
+      "apartmentId": "HER-1-18",
+      "apartmentName": "Hermodsgade, 1. sal, lejlighed 18",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1ab7fc561401e589ae14b_Lejlighed_1_18.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_1_20.svg",
+      "apartmentId": "HER-1-20",
+      "apartmentName": "Hermodsgade, 1. sal, lejlighed 20",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1ab7ffc1a681957eb0cb3_Lejlighed_1_20.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_1_19.svg",
+      "apartmentId": "HER-1-19",
+      "apartmentName": "Hermodsgade, 1. sal, lejlighed 19",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1ab7f16fb0ac2bce6697f_Lejlighed_1_19.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_1_17.svg",
+      "apartmentId": "HER-1-17",
+      "apartmentName": "Hermodsgade, 1. sal, lejlighed 17",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1ab7f6a8cb1b67181153a_Lejlighed_1_17.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_1_16.svg",
+      "apartmentId": "HER-1-16",
+      "apartmentName": "Hermodsgade, 1. sal, lejlighed 16",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1ab7f0bace6542d432e4a_Lejlighed_1_16.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_1_13.svg",
+      "apartmentId": "HER-1-13",
+      "apartmentName": "Hermodsgade, 1. sal, lejlighed 13",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1ab7dc561401e589ae0b3_Lejlighed_1_13.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_1_15.svg",
+      "apartmentId": "HER-1-15",
+      "apartmentName": "Hermodsgade, 1. sal, lejlighed 15",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1ab7d3227696389f6c51f_Lejlighed_1_15.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_1_14.svg",
+      "apartmentId": "HER-1-14",
+      "apartmentName": "Hermodsgade, 1. sal, lejlighed 14",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1ab7d498e3e1dd6d8b8fb_Lejlighed_1_14.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_1_11.svg",
+      "apartmentId": "HER-1-11",
+      "apartmentName": "Hermodsgade, 1. sal, lejlighed 11",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1ab7d724de11140382ea9_Lejlighed_1_11.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_1_12.svg",
+      "apartmentId": "HER-1-12",
+      "apartmentName": "Hermodsgade, 1. sal, lejlighed 12",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1ab7df76326c5dcca388e_Lejlighed_1_12.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_1_08.svg",
+      "apartmentId": "HER-1-08",
+      "apartmentName": "Hermodsgade, 1. sal, lejlighed 08",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1ab7cc9e8385d3824fd78_Lejlighed_1_08.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_1_05.svg",
+      "apartmentId": "HER-1-05",
+      "apartmentName": "Hermodsgade, 1. sal, lejlighed 05",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1ab7cf1258ded5f6b1e9e_Lejlighed_1_05.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_1_10.svg",
+      "apartmentId": "HER-1-10",
+      "apartmentName": "Hermodsgade, 1. sal, lejlighed 10",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1ab7c0c84f9b851aabc50_Lejlighed_1_10.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_1_09.svg",
+      "apartmentId": "HER-1-09",
+      "apartmentName": "Hermodsgade, 1. sal, lejlighed 09",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1ab7cf229ddb62e78fc5d_Lejlighed_1_09.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_1_06.svg",
+      "apartmentId": "HER-1-06",
+      "apartmentName": "Hermodsgade, 1. sal, lejlighed 06",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1ab7caa52de3afe52313e_Lejlighed_1_06.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_1_04.svg",
+      "apartmentId": "HER-1-04",
+      "apartmentName": "Hermodsgade, 1. sal, lejlighed 04",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1ab7b5b9199da8ddb3969_Lejlighed_1_04.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_1_03.svg",
+      "apartmentId": "HER-1-03",
+      "apartmentName": "Hermodsgade, 1. sal, lejlighed 03",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1ab7b0b2c52d8bf89e6a7_Lejlighed_1_03.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_1_01.svg",
+      "apartmentId": "HER-1-01",
+      "apartmentName": "Hermodsgade, 1. sal, lejlighed 01",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1ab7bc6aaa59cf6eb8e6e_Lejlighed_1_01.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_1_02.svg",
+      "apartmentId": "HER-1-02",
+      "apartmentName": "Hermodsgade, 1. sal, lejlighed 02",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1ab7b38788b0c7975157a_Lejlighed_1_02.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_1_07.svg",
+      "apartmentId": "HER-1-07",
+      "apartmentName": "Hermodsgade, 1. sal, lejlighed 07",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1ab7b106b70bdf2daeb9e_Lejlighed_1_07.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_0_29.svg",
+      "apartmentId": "HER-0-29",
+      "apartmentName": "Hermodsgade, stue, lejlighed 29",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1ab659115bae41c9aaae9_Lejlighed_0_29.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_0_38.svg",
+      "apartmentId": "HER-0-38",
+      "apartmentName": "Hermodsgade, stue, lejlighed 38",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1ab644f5ec5da45943096_Lejlighed_0_37.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_0_34.svg",
+      "apartmentId": "HER-0-34",
+      "apartmentName": "Hermodsgade, stue, lejlighed 34",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1ab643fc7ae42e2967570_Lejlighed_0_34.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_0_39.svg",
+      "apartmentId": "HER-0-39",
+      "apartmentName": "Hermodsgade, stue, lejlighed 39",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1ab646aad8e0a32111892_Lejlighed_0_38.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_0_36.svg",
+      "apartmentId": "HER-0-36",
+      "apartmentName": "Hermodsgade, stue, lejlighed 36",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1ab64144cdf76ed54a2dc_Lejlighed_0_36.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_0_33.svg",
+      "apartmentId": "HER-0-33",
+      "apartmentName": "Hermodsgade, stue, lejlighed 33",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1ab645b9199da8ddb3364_Lejlighed_0_33.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_0_31.svg",
+      "apartmentId": "HER-0-31",
+      "apartmentName": "Hermodsgade, stue, lejlighed 31",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1ab641999f7190fb45283_Lejlighed_0_31.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_0_35.svg",
+      "apartmentId": "HER-0-35",
+      "apartmentName": "Hermodsgade, stue, lejlighed 35",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1ab6440f17d7c4a77875e_Lejlighed_0_35.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_0_32.svg",
+      "apartmentId": "HER-0-32",
+      "apartmentName": "Hermodsgade, stue, lejlighed 32",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1ab64f50004b9608decb7_Lejlighed_0_32.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_0_30.svg",
+      "apartmentId": "HER-0-30",
+      "apartmentName": "Hermodsgade, stue, lejlighed 30",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1ab634f5bc652dc4344a0_Lejlighed_0_30.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_0_25.svg",
+      "apartmentId": "HER-0-25",
+      "apartmentName": "Hermodsgade, stue, lejlighed 25",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1ab63e8f29e0fbcaf5fa8_Lejlighed_0_25.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_0_21.svg",
+      "apartmentId": "HER-0-21",
+      "apartmentName": "Hermodsgade, stue, lejlighed 21",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1ab636ba115d76c00f7b2_Lejlighed_0_21.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_0_27.svg",
+      "apartmentId": "HER-0-27",
+      "apartmentName": "Hermodsgade, stue, lejlighed 27",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1ab6393cf1b97e8153ce6_Lejlighed_0_27.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_0_23.svg",
+      "apartmentId": "HER-0-23",
+      "apartmentName": "Hermodsgade, stue, lejlighed 23",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1ab639984678d1bdf56da_Lejlighed_0_23.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_0_28.svg",
+      "apartmentId": "HER-0-28",
+      "apartmentName": "Hermodsgade, stue, lejlighed 28",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1ab63d568fa102490401c_Lejlighed_0_28.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_0_22.svg",
+      "apartmentId": "HER-0-22",
+      "apartmentName": "Hermodsgade, stue, lejlighed 22",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1ab63144cdf76ed54a243_Lejlighed_0_22.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_0_24.svg",
+      "apartmentId": "HER-0-24",
+      "apartmentName": "Hermodsgade, stue, lejlighed 24",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1ab63c4fc66f34da671f6_Lejlighed_0_24.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_0_26.svg",
+      "apartmentId": "HER-0-26",
+      "apartmentName": "Hermodsgade, stue, lejlighed 26",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1ab63e9195c83b1b66010_Lejlighed_0_26.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_0_10.svg",
+      "apartmentId": "HER-0-10",
+      "apartmentName": "Hermodsgade, stue, lejlighed 10",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1ab606ba115d76c00f4c7_Lejlighed_0_10.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_0_19.svg",
+      "apartmentId": "HER-0-19",
+      "apartmentName": "Hermodsgade, stue, lejlighed 19",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1ab603651a24efa4602eb_Lejlighed_0_19.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_0_15.svg",
+      "apartmentId": "HER-0-15",
+      "apartmentName": "Hermodsgade, stue, lejlighed 15",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1ab60766da4d79e29e27d_Lejlighed_0_15.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_0_20.svg",
+      "apartmentId": "HER-0-20",
+      "apartmentName": "Hermodsgade, stue, lejlighed 20",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1ab601b39a437d8387a46_Lejlighed_0_20.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_0_13.svg",
+      "apartmentId": "HER-0-13",
+      "apartmentName": "Hermodsgade, stue, lejlighed 13",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1ab601b39a437d8387a43_Lejlighed_0_13.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_0_16.svg",
+      "apartmentId": "HER-0-16",
+      "apartmentName": "Hermodsgade, stue, lejlighed 16",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1ab60e2feefbbb18224aa_Lejlighed_0_16.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_0_18.svg",
+      "apartmentId": "HER-0-18",
+      "apartmentName": "Hermodsgade, stue, lejlighed 18",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1ab60a36f1122cb89adc8_Lejlighed_0_18.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_0_12.svg",
+      "apartmentId": "HER-0-12",
+      "apartmentName": "Hermodsgade, stue, lejlighed 12",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1ab6078c6137133d510c2_Lejlighed_0_12.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_0_17.svg",
+      "apartmentId": "HER-0-17",
+      "apartmentName": "Hermodsgade, stue, lejlighed 17",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1ab60e4094c584f369e77_Lejlighed_0_17.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_0_14.svg",
+      "apartmentId": "HER-0-14",
+      "apartmentName": "Hermodsgade, stue, lejlighed 14",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1ab60106b70bdf2dadcc9_Lejlighed_0_14.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_0_01.svg",
+      "apartmentId": "HER-0-01",
+      "apartmentName": "Hermodsgade, stue, lejlighed 01",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1ab5f468fdb830e1da46d_Lejlighed_0_01.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_0_04.svg",
+      "apartmentId": "HER-0-04",
+      "apartmentName": "Hermodsgade, stue, lejlighed 04",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1ab5fac0468ed292bf491_Lejlighed_0_04.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_0_07.svg",
+      "apartmentId": "HER-0-07",
+      "apartmentName": "Hermodsgade, stue, lejlighed 07",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1ab5f7128cc7bc8f82e3e_Lejlighed_0_07.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_0_05.svg",
+      "apartmentId": "HER-0-05",
+      "apartmentName": "Hermodsgade, stue, lejlighed 05",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1ab5e67d2951fae07977d_Lejlighed_0_05.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_0_11.svg",
+      "apartmentId": "HER-0-11",
+      "apartmentName": "Hermodsgade, stue, lejlighed 11",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1ab5e2843303995e00fbd_Lejlighed_0_11.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_0_08.svg",
+      "apartmentId": "HER-0-08",
+      "apartmentName": "Hermodsgade, stue, lejlighed 08",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1ab5eaf63b3a67a131c1e_Lejlighed_0_08.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_0_06.svg",
+      "apartmentId": "HER-0-06",
+      "apartmentName": "Hermodsgade, stue, lejlighed 06",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1ab5ea1e557dca9c631aa_Lejlighed_0_06.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_0_02.svg",
+      "apartmentId": "HER-0-02",
+      "apartmentName": "Hermodsgade, stue, lejlighed 02",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1ab5ebae9c37e6faccd53_Lejlighed_0_02.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_0_03.svg",
+      "apartmentId": "HER-0-03",
+      "apartmentName": "Hermodsgade, stue, lejlighed 03",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1ab5ec9e8385d3824f474_Lejlighed_0_03.svg"
+    },
+    {
+      "filename": "HER_Lejlighed_0_09.svg",
+      "apartmentId": "HER-0-09",
+      "apartmentName": "Hermodsgade, stue, lejlighed 09",
+      "assetUrl": "https://s3.amazonaws.com/webflow-prod-assets/686383aa51b13c9f891f8227/68b1ab5efabe488f769810c9_Lejlighed_0_09.svg"
+    }
+  ],
+  "timestamp": "2025-09-03T20:01:33.679Z",
+  "siteId": "686383aa51b13c9f891f8227"
+}
